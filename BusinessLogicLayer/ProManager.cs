@@ -15,6 +15,7 @@ namespace BusinessLogicLayer
         public List<Product> Productlist()
         {
             return product.List();
+            
         }
     }
 }

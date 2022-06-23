@@ -18,6 +18,9 @@ namespace EShopier.Entities
 
         public string Email { get; set; }
 
+     
+
+
 
     }
 }
