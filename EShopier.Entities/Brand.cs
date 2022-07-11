@@ -16,6 +16,11 @@ namespace EShopier.Entities
         public virtual List<Product> Products { get; set; }
 
         public DateTime AddDate { get; set; }
+        public Brand()
+        {
+            Products = new List<Product>();
+
+        }
 
     }
 }

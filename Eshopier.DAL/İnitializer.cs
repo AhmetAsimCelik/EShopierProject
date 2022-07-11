@@ -10,12 +10,13 @@ namespace Eshopier.DAL
 {
     internal class İnitializer : CreateDatabaseIfNotExists<Context>
     {
+       
         protected override void Seed(Context context)
         {
             Category cat = new Category();
             for (int i = 0; i < 10; i++)
             {
-                cat.Name=FakeData.NameData.GetMaleFirstName();
+                cat.Name = FakeData.NameData.GetMaleFirstName();
                 cat.Description = FakeData.TextData.GetSentences(FakeData.NumberData.GetNumber(1, 5));
                 cat.AddDate = DateTime.Now;
 
@@ -27,7 +28,7 @@ namespace Eshopier.DAL
                     {
                         Name = FakeData.NameData.GetCompanyName(),
                         Origin = FakeData.PlaceData.GetCountry(),
-                        AddDate= DateTime.Now,  
+                        AddDate = DateTime.Now,
 
 
 
@@ -45,8 +46,12 @@ namespace Eshopier.DAL
 
                         };
                         brand.Products.Add(product);
+
                     }
+
                 }
+                
+
             }
             context.SaveChanges();
         }

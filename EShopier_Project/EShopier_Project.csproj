@@ -184,6 +184,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Loginuser.cs" />
+    <Compile Include="Models\Registeruser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +200,8 @@
     <Content Include="Views\Home\Product.cshtml" />
     <Content Include="Views\Home\ProdutDetails.cshtml" />
     <Content Include="Views\Shared\_PartialCategory.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -207,7 +211,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>

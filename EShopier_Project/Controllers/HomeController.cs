@@ -26,7 +26,7 @@ namespace EShopier_Project.Controllers
         }
         public ActionResult ProdutDetails()
         {
-            return View();
+            return View(pro.Productlist());
         }
         public ActionResult ByCategory(int? id )
         {
@@ -58,6 +58,15 @@ namespace EShopier_Project.Controllers
 
             return View("Index", bra.Products);
         }
+        public ActionResult Login()
+        {
+            return View();
+        }
+        public ActionResult Register()
+        {
+            return View();
+        }
+
 
     }
 }
