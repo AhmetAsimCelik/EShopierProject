@@ -1,5 +1,6 @@
 ﻿using BusinessLogicLayer;
 using EShopier.Entities;
+using EShopier_Project.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,6 +65,12 @@ namespace EShopier_Project.Controllers
         }
         public ActionResult Register()
         {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Register(Loginuser user)
+        {
+
             return View();
         }
 
