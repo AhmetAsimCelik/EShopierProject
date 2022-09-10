@@ -12,13 +12,11 @@ namespace EShopier.Entities
         public string Name { get; set; }
         public string Description { get; set; }        
         public virtual List<Product> Product { get; set; }
-        public virtual List<Brand> Brands { get; set; }
         public DateTime AddDate { get; set; }
 
         public Category()
         {
             Product = new List<Product>();
-            //Brands = new List<Brand>();
 
         }
 

@@ -10,11 +10,8 @@ namespace EShopier.Entities
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Origin { get; set; }
-        public int CategoryID { get; set; }
-        public Category Category { get; set; }
+        public string Origin { get; set; }      
         public virtual List<Product> Products { get; set; }
-
         public DateTime AddDate { get; set; }
         public Brand()
         {

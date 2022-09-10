@@ -184,8 +184,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Loginuser.cs" />
-    <Compile Include="Models\Registeruser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -211,12 +209,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
     <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogicLayer\EShopier.BLL.csproj">
       <Project>{5f2971f7-7347-4d55-a76c-f757461a2ffa}</Project>
       <Name>EShopier.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eshopier.DAL\Eshopier.DAL.csproj">
+      <Project>{32FBED15-FA27-4932-81DD-D5CB7FD483DB}</Project>
+      <Name>Eshopier.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\EShopier.Entities\EShopier.Entities.csproj">
       <Project>{3159a669-5576-477e-93d4-bdc59a5d6f7d}</Project>

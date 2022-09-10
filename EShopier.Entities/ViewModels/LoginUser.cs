@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace EShopier_Project.Models
+namespace EShopier.Entities.ViewModels
 {
-    public class Loginuser
-    {
+    public class LoginUser
+    {        
         public string UserName { get; set; }
         public string Password { get; set; }
-
     }
 }

@@ -13,47 +13,50 @@ namespace Eshopier.DAL
        
         protected override void Seed(Context context)
         {
-            Category cat = new Category();
-            for (int i = 0; i < 10; i++)
-            {
-                cat.Name = FakeData.NameData.GetMaleFirstName();
-                cat.Description = FakeData.TextData.GetSentences(FakeData.NumberData.GetNumber(1, 5));
-                cat.AddDate = DateTime.Now;
+           
 
-                context.Categories.Add(cat);
+           for (int i = 0; i < 10; i++)
+           {
+                    Category cat = new Category();
 
-                for (int b = 0; b < 10; b++)
+                    cat.Name = FakeData.NameData.GetMaleFirstName();
+                    cat.Description = FakeData.TextData.GetSentences(FakeData.NumberData.GetNumber(1, 5));
+                    cat.AddDate = DateTime.Now;
+
+                    context.Categories.Add(cat);
+
+                Brand brand = new Brand();
+                Product product = new Product();
+
+                for (int d = 0; d < 10; d++)
                 {
-                    Brand brand = new Brand()
+                    
+                    brand.Name = FakeData.NameData.GetCompanyName();
+                    brand.Origin = FakeData.PlaceData.GetCountry();
+                    brand.AddDate = DateTime.Now;
+
+                    for (int b = 0; b < 10; b++)
                     {
-                        Name = FakeData.NameData.GetCompanyName(),
-                        Origin = FakeData.PlaceData.GetCountry(),
-                        AddDate = DateTime.Now,
 
-
-
-                    };
-                    cat.Brands.Add(brand);
-
-                    for (int c = 0; c < 10; c++)
-                    {
-                        Product product = new Product()
+                       
                         {
-                            Name = FakeData.NameData.GetFirstName(),
-                            UnitPrice = FakeData.NumberData.GetNumber(100, 1000).ToString(),
-                            UnitStock = FakeData.NumberData.GetNumber(1, 9).ToString(),
-                            AddDate = DateTime.Now,
+                            product.Name = FakeData.NameData.GetFirstName();
+                            product.UnitPrice = FakeData.NumberData.GetNumber(100, 1000).ToString();
+                            product.UnitStock = FakeData.NumberData.GetNumber(1, 9).ToString();
+                            product.AddDate = DateTime.Now;
 
                         };
+
+                        cat.Product.Add(product);
                         brand.Products.Add(product);
 
                     }
-
                 }
-                
-
+                context.SaveChanges();
             }
-            context.SaveChanges();
+
+          
+
         }
     }
 

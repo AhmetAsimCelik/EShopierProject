@@ -1,6 +1,7 @@
 ﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Result;
 using EShopier.Entities;
-using EShopier_Project.Models;
+using EShopier.Entities.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace EShopier_Project.Controllers
     {
         // GET: Home
         ProManager pro = new ProManager();
+        UserManager um = new UserManager();
        
         public ActionResult Index()
         {
@@ -63,15 +65,21 @@ namespace EShopier_Project.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Login(LoginUser model)
+        {
+            um.UserLogin(model);
+            return RedirectToAction("Index"); 
+        }
         public ActionResult Register()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult Register(Loginuser user)
-        {
-
-            return View();
+        public ActionResult Register(RegisterUser model)
+        {           
+            um.UserRegister(model);
+            return View(model);
         }
 
 

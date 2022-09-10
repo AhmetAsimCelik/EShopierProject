@@ -14,8 +14,8 @@ namespace EShopier.Entities
 
         public string UnitStock { get; set; }
 
-        //public int BrandID { get; set; }
-        //public Brand Brand { get; set; }
+        public int BrandID { get; set; }
+        public Brand Brand { get; set; }
         public int CategoryID { get; set; }
         public Category Category { get; set; }
 
