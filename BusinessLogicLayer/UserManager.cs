@@ -5,6 +5,7 @@ using EShopier.Entities;
 using EShopier.Entities.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,17 +63,28 @@ namespace BusinessLogicLayer
                 LastName = model.LastName,
                 Password = model.Password,
                 Email = model.Email,
+                IsAdmin=false,
             });
         }
-        public void UserLogin(LoginUser model)
+        public BusinessLayerResult<User> UserLogin(LoginUser model)
         {
-             var sonuc = _user.Find(x => x.UserName == model.UserName || x.Password == model.Password);
-            if (sonuc != null)
+            BusinessLayerResult<User> result = new BusinessLayerResult<User>();
+
+            //var sonuc = _user.Find(x => x.UserName == model.UserName || x.Password == model.Password);
+            result.Result = _user.Find(x => x.UserName == model.UserName && x.Password == model.Password);
+            
+
+            if (result.Result != null)
             {
+               
+            }
+            else
+            {
+                result.AddError(ErrorMessageCode.UsernameOrPassWrong, "Kullanıcı adı veya şifre hatası.");
+
 
             }
-            
-            
+            return result;
 
         }
 

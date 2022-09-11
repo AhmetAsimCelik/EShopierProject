@@ -68,7 +68,11 @@ namespace EShopier_Project.Controllers
         [HttpPost]
         public ActionResult Login(LoginUser model)
         {
-            um.UserLogin(model);
+            if (ModelState.IsValid)
+            {
+                um.UserLogin(model);
+            }
+               
             return RedirectToAction("Index"); 
         }
         public ActionResult Register()
@@ -78,8 +82,20 @@ namespace EShopier_Project.Controllers
         [HttpPost]
         public ActionResult Register(RegisterUser model)
         {           
-            um.UserRegister(model);
-            return View(model);
+            if (ModelState.IsValid)
+            {
+                if (model.Password == model.PasswordAgain)
+                {
+                    um.UserRegister(model);
+                }
+                else
+                {
+                    return View();
+                }
+            }
+
+            return RedirectToAction("Login");
+
         }
 
 

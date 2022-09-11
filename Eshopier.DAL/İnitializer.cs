@@ -53,9 +53,25 @@ namespace Eshopier.DAL
                     }
                 }
                 context.SaveChanges();
-            }
+           }
+           for (int i = 0; i < 10; i++)
+           {
+                User user = new User()
+                {
+                    Name = FakeData.NameData.GetFirstName(),
+                    LastName = FakeData.NameData.GetSurname(),
+                    UserName = FakeData.NameData.GetFullName(),
+                    Email = FakeData.NetworkData.GetEmail(),
+                    Password = "1",
+                    IsAdmin = false,
+                    
+                };
 
-          
+           }
+
+
+
+
 
         }
     }
