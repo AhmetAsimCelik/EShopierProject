@@ -21,5 +21,7 @@ namespace EShopier.Entities
 
         public DateTime AddDate { get; set; }
 
+        public string ProfileImage { get; set; }
+
     }
 }
