@@ -51,6 +51,7 @@ namespace EShopier_Project.Controllers
         {
             if (ModelState.IsValid)
             {
+                category.AddDate = DateTime.Now;
                 db.Categories.Add(category);
                 db.SaveChanges();
                 return RedirectToAction("Index");

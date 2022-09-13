@@ -3,12 +3,15 @@
 @{
     ViewBag.Title = "Index";
 }
+<div class=" text-center">
+    <h2>Kategori Listesi</h2>
 
-<h2>Index</h2>
+    <p>
+        @Html.ActionLink("Kategori Oluştur", "Create", new { @class = "btn btn-danger" })
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    </p>
+</div>
+
 <table class="table">
     <tr>
         <th>
@@ -35,9 +38,15 @@
             @Html.DisplayFor(modelItem => item.AddDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            <a href="/Categories/Edit/@item.ID" class="btn btn-info btn-xs" title="Edit">
+                <span class="fa fa-edit"></span>
+            </a>
+            <a href="/Categories/Details/@item.ID" class="btn btn-info btn-xs" title="Details">
+                <span class="fa fa-search"></span>
+            </a>
+            <a href="/Categories/Delete/@item.ID" class="btn btn-danger btn-xs" title="Delete">
+                <span class="fa fa-trash-o"></span>
+            </a>
         </td>
     </tr>
 }
