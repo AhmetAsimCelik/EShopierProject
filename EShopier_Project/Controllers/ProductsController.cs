@@ -9,11 +9,13 @@ using System.Web;
 using System.Web.Mvc;
 using EShopier.Entities;
 using Eshopier.DAL;
+using BusinessLogicLayer;
 
 namespace EShopier_Project.Controllers
 {
     public class ProductsController : Controller
     {
+        ProManager pro = new ProManager();
         private Context db = new Context();
 
         // GET: Products
@@ -55,6 +57,7 @@ namespace EShopier_Project.Controllers
         {
             if (ModelState.IsValid)
             {
+                product.AddDate = DateTime.Now;
                 db.Products.Add(product);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -133,6 +136,42 @@ namespace EShopier_Project.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult ProdutDetails()
+        {
+
+            return View(pro.Productlist());
+
+        }
+        public ActionResult ByBrandForPDetails(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+
+            BrandManager bm = new BrandManager();
+            Brand bra = bm.GetBrandgetir(id.Value);
+
+            if (bra == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View("ProdutDetails", bra.Products);
+        }
+        public ActionResult ByCategoryForPDetails(int? id)
+        {
+            if (id == null)
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+
+            CatManager cm = new CatManager();
+            Category cat = cm.GetCategorgetir(id.Value);
+
+            if (cat == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View("ProdutDetails", cat.Product);
         }
     }
 }

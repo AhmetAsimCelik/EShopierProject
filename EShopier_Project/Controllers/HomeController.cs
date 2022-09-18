@@ -15,28 +15,22 @@ namespace EShopier_Project.Controllers
         // GET: Home
         ProManager pro = new ProManager();
         UserManager um = new UserManager();
+        CatManager cm = new CatManager();
+        BrandManager bm = new BrandManager();  
        
         public ActionResult Index()
         {
 
             return View(pro.Productlist());
-           
-            
+                     
         }
-        public ActionResult Product()
-        {
-            return View();
-        }
-        public ActionResult ProdutDetails()
-        {
-            return View(pro.Productlist());
-        }
+    
         public ActionResult ByCategory(int? id )
         {
             if (id == null)
                 return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
 
-            CatManager cm = new CatManager();
+           
             Category cat = cm.GetCategorgetir(id.Value);
 
             if (cat == null)
@@ -51,7 +45,7 @@ namespace EShopier_Project.Controllers
             if (id == null)
                 return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
 
-            BrandManager bm = new BrandManager();
+          
             Brand bra = bm.GetBrandgetir(id.Value);
 
             if (bra == null)
@@ -61,6 +55,7 @@ namespace EShopier_Project.Controllers
 
             return View("Index", bra.Products);
         }
+      
         public ActionResult Login()
         {
             return View();
@@ -97,7 +92,13 @@ namespace EShopier_Project.Controllers
             return RedirectToAction("Login");
 
         }
+        public ActionResult Cart()
+        {
 
+            return View();
+
+        }
+       
 
     }
 }
