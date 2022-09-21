@@ -4,26 +4,26 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Ürün Detayları</h2>
 
 <div>
-    <h4>Product</h4>
+    <h4>Ürünler</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Brand.Name)
+            @Html.DisplayNameFor(model => model.BrandID)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Brand.Name)
+            @Html.DisplayFor(model => model.BrandID)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Category.Name)
+            @Html.DisplayNameFor(model => model.CategoryID)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Category.Name)
+            @Html.DisplayFor(model => model.CategoryID)
         </dd>
 
         <dt>
@@ -69,6 +69,8 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+  
+    <a href="/Products/Edit/@Model.ID"><input type="submit" value="Düzenle" class="btn btn-info" new { id=@Model.ID } /></a> |
+    <a href="/Products/Index"><input type="submit" value="Listeye Geri Dön" class="btn btn-primary" /></a>
+
 </p>
