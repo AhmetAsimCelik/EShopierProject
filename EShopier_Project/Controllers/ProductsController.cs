@@ -76,7 +76,7 @@ namespace EShopier_Project.Controllers
                     //var uzanti = Path.Combine(Directory.GetCurrentDirectory(), "~/images", ProfileImage.FileName);
 
                     ProfileImage.SaveAs(uzanti);
-                    product.ProfileImage = "~/Content/images/" + dosyaadi;
+                    product.ProfileImage = dosyaadi;
                 }
                 product.AddDate = DateTime.Now;
                 db.Products.Add(product); 
