@@ -267,6 +267,7 @@
     <Content Include="Views\Home\Shop.cshtml" />
     <Content Include="Views\Products\ProdutDetails.cshtml" />
     <Content Include="Views\Shared\_PartialCategory2.cshtml" />
+    <Content Include="Views\Home\Account.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
