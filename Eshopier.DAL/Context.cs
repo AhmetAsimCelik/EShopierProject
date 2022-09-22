@@ -14,16 +14,7 @@ namespace Eshopier.DAL
         {
             Database.Connection.ConnectionString = "Server=DESKTOP-N031PB4; Database=EShopierProject; uid=sa; pwd=1";
             //Database.SetInitializer(new İnitializer());
-            User user = new User()
-            {
-                Name="Ahmet Asım",
-                LastName="Çelik",
-                UserName="ahmetasimcelik",
-                Email="@ahmetasimcelikgmail.com",
-                Password="1",
-                IsAdmin=true,
-                
-            };
+           
         }
         public DbSet<User> Users { get; set; }
 

@@ -16,7 +16,9 @@ namespace EShopier.Entities.ViewModels
         public string Password { get; set; }
         public string PasswordAgain { get; set; }
 
-
         public string Email { get; set; }
+
+        public string ProfileImage { get; set; }
+
     }
 }

@@ -100,10 +100,20 @@
                                             </ul>
                                         </li>
                                         <li><a href="/Home/Account"><i class="fa fa-user"></i> @user.UserName</a></li>
+                                        <li><a href="/Home/Logout"><i class="fa fa-sign-out"></i> Çıkış</a></li>
+
+                                    }
+                                    else
+
+
+                                    {
+                                        <li><a href="/Home/Cart"><i class="fa fa-shopping-cart"></i> Sepetim</a></li>
+                                        <li><a href="/Home/Account"><i class="fa fa-user"></i> @user.UserName</a></li>
+
+                                        <li><a href="/Home/Logout"><i class="fa fa-sign-out"></i> Çıkış</a></li>
+
                                     }
 
-                                    <li><a href="/Home/Cart"><i class="fa fa-shopping-cart"></i> Sepetim</a></li>
-                                    
 
                                 }
                                 else
@@ -113,7 +123,7 @@
                                     <li><a href="/Home/Login"><i class="fa fa-sign-in"></i> Giriş</a></li>
                                 }
 
-                                <li><a href="/Home/Logout"><i class="fa fa-sign-out"></i> Çıkış</a></li>
+
 
 
                             </ul>

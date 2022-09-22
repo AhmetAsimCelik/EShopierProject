@@ -5,6 +5,7 @@ using EShopier.Entities;
 using EShopier.Entities.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -91,10 +92,20 @@ namespace EShopier_Project.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Register(RegisterUser model)
-        {           
+        public ActionResult Register(RegisterUser model, HttpPostedFileBase ProfileImage)
+        {
+          
             if (ModelState.IsValid)
             {
+                if (ProfileImage.ContentLength > 0)
+                {
+                    var dosyaadi = Path.GetFileName(ProfileImage.FileName);
+                    var uzanti = Path.Combine(Server.MapPath("~/Content/images"), dosyaadi);
+                    
+                    ProfileImage.SaveAs(uzanti);
+                    model.ProfileImage = dosyaadi;
+                    
+                }
                 if (model.Password == model.PasswordAgain)
                 {
                     um.UserRegister(model);
@@ -127,8 +138,7 @@ namespace EShopier_Project.Controllers
             }
 
             return View(res.Result);
-
-            return View();
+         
 
         }
         public ActionResult Logout()

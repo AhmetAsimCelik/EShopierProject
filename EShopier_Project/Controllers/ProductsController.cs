@@ -50,30 +50,20 @@ namespace EShopier_Project.Controllers
             return View();
         }
 
-        // POST: Products/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "ID,Name,UnitPrice,UnitStock,BrandID,CategoryID,AddDate,ProfileImage")] Product product,HttpPostedFileBase ProfileImage)
         {
-
-            //if (Request.Files.Count > 0)
-            //{
-            //    string dosyaadi = Path.GetFileName(Request.Files[0].FileName);
-            //    string uzanti = Path.GetExtension(Request.Files[0].FileName);
-            //    string yol = "~/Content/images/" + dosyaadi + uzanti;
-            //    Request.Files[0].SaveAs(Server.MapPath(yol));
-            //    product.ProfileImage = "/Content/images/" + dosyaadi + uzanti;
-            //}
-            
+           
+           
             if (ModelState.IsValid)
             {
                 if (ProfileImage.ContentLength > 0)
                 {
                     var dosyaadi = Path.GetFileName(ProfileImage.FileName);
                     var uzanti = Path.Combine(Server.MapPath("~/Content/images"), dosyaadi);
-                    //var uzanti = Path.Combine(Directory.GetCurrentDirectory(), "~/images", ProfileImage.FileName);
+                    
 
                     ProfileImage.SaveAs(uzanti);
                     product.ProfileImage = dosyaadi;

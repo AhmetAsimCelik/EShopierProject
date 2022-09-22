@@ -63,6 +63,7 @@ namespace BusinessLogicLayer
                 LastName = model.LastName,
                 Password = model.Password,
                 Email = model.Email,
+                ProfileImage = model.ProfileImage,  
                 IsAdmin=false,
             });
         }

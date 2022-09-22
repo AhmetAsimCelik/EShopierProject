@@ -24,7 +24,7 @@ namespace EShopier.Entities
         public bool IsAdmin { get; set; }
 
 
-
+        public string ProfileImage { get; set; }
 
 
     }
