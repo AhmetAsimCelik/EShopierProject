@@ -33,6 +33,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.AddDate)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfileImage)
+            </th>
 
             <th></th>
         </tr>
@@ -57,6 +60,9 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AddDate)
+                </td>
+                <td>
+                   <img src="@item.ProfileImage" width="50" height="50" />
                 </td>
 
                 <td>
