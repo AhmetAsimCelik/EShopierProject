@@ -26,7 +26,15 @@
 </head><!--/head-->
 
 <body>
+    @{
+        User user = null;
+        if (Session["login"] != null)
+        {
+            user = Session["login"] as User;
+        }
 
+
+    }
     <header id="header">
         <!--header-->
         <div class="header_top">
@@ -62,84 +70,93 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href="/Home/Index"><img src="~/Content/images/home/logo.png" alt="" /></a>                                                         
+                            <a href="/Home/Index"><img src="~/Content/images/home/logo.png" alt="" /></a>
                         </div>
 
-                    </div>                 
-                    <div class="col-sm-8">                        
+                    </div>
+                    <div class="col-sm-8">
                         <div class="shop-menu pull-right">
                             <ul class="nav navbar-nav">
 
-                                <li class="dropdown">
-                                    <a href="/Blog/Index" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <span class="fa fa-bars"></span> Admin Panel <span class="caret"> </span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a href="/Categories/Index"><span class="fa fa-plus-circle"></span> Kategori Ekle</a>
+                                @if (user != null)
+                                {
+                                    if (user.IsAdmin == true)
+                                    {
+                                        <li class="dropdown">
+                                            <a href="/Blog/Index" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                <span class="fa fa-bars"></span> Admin Panel <span class="caret"> </span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a href="/Categories/Index"><span class="fa fa-plus-circle"></span> Kategori Ekle</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/Brands/Index"><span class="fa fa-plus-circle"></span> Marka Ekle</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/Products/Index"><span class="fa fa-plus-circle"></span> Ürün Ekle</a>
+                                                </li>
+
+                                            </ul>
                                         </li>
-                                        <li>
-                                            <a href="/Brands/Index"><span class="fa fa-plus-circle"></span> Marka Ekle</a>
-                                        </li>
-                                        <li>
-                                            <a href="/Products/Index"><span class="fa fa-plus-circle"></span> Ürün Ekle</a>
-                                        </li>
+                                        <li><a href="/Home/Account"><i class="fa fa-user"></i> @user.UserName</a></li>
+                                    }
 
+                                    <li><a href="/Home/Cart"><i class="fa fa-shopping-cart"></i> Sepetim</a></li>
+                                    
 
-                                    </ul>
-                                </li>
+                                }
+                                else
 
-                                <li><a href="/Home/Cart"><i class="fa fa-shopping-cart"></i> Sepetim</a></li>
-                                <li><a href="/Home/Account"><i class="fa fa-user"></i> Hesabım</a></li>
-                                <li><a href="/Home/Register"><i class="fa fa-male"></i> Kayıt Ol</a></li>
-                                <li><a href="/Home/Login"><i class="fa fa-sign-in"></i> Giriş</a></li>
-                                <li><a href="/Home/Login"><i class="fa fa-sign-out"></i> Çıkış</a></li>
+                                {
+                                    <li><a href="/Home/Register"><i class="fa fa-male"></i> Kayıt Ol</a></li>
+                                    <li><a href="/Home/Login"><i class="fa fa-sign-in"></i> Giriş</a></li>
+                                }
 
-
-
+                                <li><a href="/Home/Logout"><i class="fa fa-sign-out"></i> Çıkış</a></li>
 
 
                             </ul>
                         </div>
                     </div>
-            </div>
-
-        </div><!--/header-middle-->
-
-        <div class="header-bottom">
-            <!--header-bottom-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div class="mainmenu pull-left">
-                            <ul class="nav navbar-nav collapse navbar-collapse">
-                                <li><a href="/Home/Index" class="active">Ana Menü</a></li>                              
-                                <li><a href="/Products/ProdutDetails">Ürünler</a></li>
-                                <li><a href="/Categories/Index">Kategoriler</a></li>
-                                <li><a href="/Brands/Index">Markalar</a></li>
-                                <li><a href="contact-us.html">İletişim</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    
                 </div>
-            </div>
-        </div><!--/header-bottom-->
+
+            </div><!--/header-middle-->
+
+            <div class="header-bottom">
+                <!--header-bottom-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="mainmenu pull-left">
+                                <ul class="nav navbar-nav collapse navbar-collapse">
+                                    <li><a href="/Home/Index" class="active">Ana Menü</a></li>
+                                    <li><a href="/Products/ProdutDetails">Ürünler</a></li>
+                                    <li><a href="/Categories/Index">Kategoriler</a></li>
+                                    <li><a href="/Brands/Index">Markalar</a></li>
+                                    <li><a href="contact-us.html">İletişim</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div><!--/header-bottom-->
     </header><!--/header-->
 
-   @RenderBody()
+    @RenderBody()
 
     <!--<footer id="footer">-->
-        <!--Footer-->
-        <!--<div class="footer-top">
+    <!--Footer-->
+    <!--<div class="footer-top">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-2">
@@ -294,7 +311,8 @@
             </div>
         </div>
 
-    </footer>--><!--/Footer-->
+    </footer>-->
+    <!--/Footer-->
 
 
 

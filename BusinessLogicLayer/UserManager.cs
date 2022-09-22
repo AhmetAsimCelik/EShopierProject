@@ -87,14 +87,29 @@ namespace BusinessLogicLayer
             return result;
 
         }
+        public BusinessLayerResult<User> GetUserById(int? id)
+        {
+            BusinessLayerResult<User> res = new BusinessLayerResult<User>();
+            if (id == null)
+            {
+                res.AddError(ErrorMessageCode.UserIsNotFound, "Kullanıcı bulunamadı");
+            }
+            else
+            {
+                res.Result = _user.Find(x => x.ID == id);
+
+                if (res.Result == null)
+                {
+                    res.AddError(ErrorMessageCode.UserIsNotFound, "Kullanıcı bulunamadı");
+                }
+            }
+
+            return res;
+
+        }
 
 
 
-        //public void UserRegister(User model)
-        //{
-        //    user.Instert(model);
-
-        //}
 
 
     }

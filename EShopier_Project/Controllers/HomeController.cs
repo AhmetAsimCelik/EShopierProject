@@ -1,5 +1,6 @@
 ﻿using BusinessLogicLayer;
 using BusinessLogicLayer.Result;
+using Eshopier.DAL.Messages;
 using EShopier.Entities;
 using EShopier.Entities.ViewModels;
 using System;
@@ -63,12 +64,27 @@ namespace EShopier_Project.Controllers
         [HttpPost]
         public ActionResult Login(LoginUser model)
         {
-            if (ModelState.IsValid)
+            //if (ModelState.IsValid)
+            //{
+            //    um.UserLogin(model);
+            //}
+            BusinessLayerResult<User> res = um.UserLogin(model);
+
+            if (res.Errors.Count > 0)
             {
-                um.UserLogin(model);
+                if (res.Errors.Find(x => x.Code == ErrorMessageCode.UserIsNotActive) != null)
+                {
+                    ViewBag.SetLink = "http://Home/UserActivate";
+                }
+
+                res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
+                return View(model);
             }
-               
+
+            Session["login"] = res.Result;    
             return RedirectToAction("Index"); 
+
+            
         }
         public ActionResult Register()
         {
@@ -100,11 +116,27 @@ namespace EShopier_Project.Controllers
         }
         public ActionResult Account()
         {
+            User currentUser = Session["login"] as User;
+
+            BusinessLayerResult<User> res = um.GetUserById(currentUser.ID);
+
+            if (res.Errors.Count > 0)
+            {
+                
+                return View("Error");
+            }
+
+            return View(res.Result);
 
             return View();
 
         }
+        public ActionResult Logout()
+        {
+            Session.Clear();
 
+            return RedirectToAction("Index");
+        }
 
     }
 }
