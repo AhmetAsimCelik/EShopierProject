@@ -1,0 +1,68 @@
+﻿@model EShopier.Entities.User
+
+@{
+    ViewBag.Title = "AccountDelete";
+}
+
+<h2>Hesabı Sil</h2>
+
+<h3>Hesabı Silmek İstediğinize Emin misiniz ?</h3>
+<div>
+    <h4>Kullanıcı Hesabı</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+         <div class="form-actions no-color">
+         <input type="submit" value="Hesabı Sil" class="btn btn-danger" /> |
+
+         <a href="/Home/Account"><input type="submit" value="Profile Geri Dön" class="btn btn-primary" /></a>
+
+         </div>
+    }
+</div>

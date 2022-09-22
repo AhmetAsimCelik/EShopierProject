@@ -108,6 +108,10 @@ namespace BusinessLogicLayer
             return res;
 
         }
+        public void DeleteUser(User model)
+        {
+            _user.Delete(model);
+        }
 
 
 

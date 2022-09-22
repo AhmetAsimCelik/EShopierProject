@@ -14,6 +14,8 @@ namespace EShopier_Project.Controllers
 {
     public class HomeController : Controller
     {
+        
+
         // GET: Home
         ProManager pro = new ProManager();
         UserManager um = new UserManager();
@@ -119,6 +121,12 @@ namespace EShopier_Project.Controllers
             return RedirectToAction("Login");
 
         }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+
+            return RedirectToAction("Index");
+        }
         public ActionResult Cart()
         {
 
@@ -141,11 +149,31 @@ namespace EShopier_Project.Controllers
          
 
         }
-        public ActionResult Logout()
+        public ActionResult AccountDelete()
         {
-            Session.Clear();
 
+            return View();
+
+        }
+        [HttpPost]
+        public ActionResult AccountDelete(User model)
+        {
+            um.DeleteUser(model);
+            Session.Clear();
             return RedirectToAction("Index");
+                      
+        }
+        public ActionResult AccountEdit()
+        {
+
+            return View();
+
+        }
+        public ActionResult Contact()
+        {
+
+            return View();
+
         }
 
     }
