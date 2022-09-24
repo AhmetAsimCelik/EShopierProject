@@ -110,8 +110,25 @@ namespace BusinessLogicLayer
         }
         public void DeleteUser(User model)
         {
-            _user.Delete(model);
+            var findperson = _user.Find(x => x.ID == model.ID);
+            if (model != null)
+            {
+                _user.Delete(findperson);
+            }
+           
         }
+        public void EditUser(User model)
+        {
+            var findperson = _user.Find(x => x.ID == model.ID);
+            if (model != null)
+            {
+                _user.Update(findperson);
+
+              
+            }
+
+        }
+
 
 
 

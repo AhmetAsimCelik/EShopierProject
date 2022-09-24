@@ -205,6 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BrandsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -269,9 +270,10 @@
     <Content Include="Views\Home\Shop.cshtml" />
     <Content Include="Views\Products\ProdutDetails.cshtml" />
     <Content Include="Views\Shared\_PartialCategory2.cshtml" />
-    <Content Include="Views\Home\Account.cshtml" />
-    <Content Include="Views\Home\AccountDelete.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Account\ShowAccount.cshtml" />
+    <Content Include="Views\Account\AccountDelete.cshtml" />
+    <Content Include="Views\Account\AccountEdit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

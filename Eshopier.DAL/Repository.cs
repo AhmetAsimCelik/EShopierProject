@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Eshopier.DAL
 {
-    public class Repository<T> where T : class 
+    public class Repository<T>: IDataAccess<T> where T : class 
     {
         Context con = new Context();
 
@@ -39,6 +39,11 @@ namespace Eshopier.DAL
         {
             return setkısayol.FirstOrDefault(where);
         }
+
+        public int Update(T obj)
+        {
+            return Save();
+        }
     }
-   
+
 }

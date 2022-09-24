@@ -133,42 +133,7 @@ namespace EShopier_Project.Controllers
             return View();
 
         }
-        public ActionResult Account()
-        {
-            User currentUser = Session["login"] as User;
-
-            BusinessLayerResult<User> res = um.GetUserById(currentUser.ID);
-
-            if (res.Errors.Count > 0)
-            {
-                
-                return View("Error");
-            }
-
-            return View(res.Result);
-         
-
-        }
-        public ActionResult AccountDelete()
-        {
-
-            return View();
-
-        }
-        [HttpPost]
-        public ActionResult AccountDelete(User model)
-        {
-            um.DeleteUser(model);
-            Session.Clear();
-            return RedirectToAction("Index");
-                      
-        }
-        public ActionResult AccountEdit()
-        {
-
-            return View();
-
-        }
+          
         public ActionResult Contact()
         {
 

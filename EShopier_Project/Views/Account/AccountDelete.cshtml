@@ -51,18 +51,19 @@
             @Html.DisplayFor(model => model.Email)
         </dd>
 
-        
+
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-         <div class="form-actions no-color">
-         <input type="submit" value="Hesabı Sil" class="btn btn-danger" /> |
+            <div class="form-actions no-color">
+               <input type="submit" value="Hesabı Sil" class="btn btn-danger" />
+                
+               <a href="/Account/ShowAccount"><input type="button" value="Profile Geri Dön" class="btn btn-warning" /></a>
 
-         <a href="/Home/Account"><input type="submit" value="Profile Geri Dön" class="btn btn-primary" /></a>
-
-         </div>
+            </div>
     }
 </div>
