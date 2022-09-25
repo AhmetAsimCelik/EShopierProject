@@ -3,13 +3,15 @@
 @{
     ViewBag.Title = "Details";
 }
-
-<h2>Marka Detayları</h2>
+<div class="text-center">
+    <h2>Marka Detayı</h2>
+    <h4>@Model.Name</h4>
+</div>
 
 <div>
-    <h4>Marka</h4>
+
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal col-sm-offset-4">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -37,7 +39,10 @@
     </dl>
 </div>
 <p>
-    <a href="/Brands/Edit/@Model.ID"><input type="submit" value="Düzenle" class="btn btn-info" new { id=@Model.ID } /></a> |
-    <a href="/Brands/Index"><input type="submit" value="Listeye Geri Dön" class="btn btn-primary" /></a>
+    <div class=" col-sm-offset-5">
+        <a href="/Brands/Edit/@Model.ID"><input type="submit" value="Düzenle" class="btn btn-info" new { id=@Model.ID } /></a>
+        <a href="/Brands/Index"><input type="submit" value="Listeye Geri Dön" class="btn btn-warning" /></a>
 
+    </div>
+   
 </p>

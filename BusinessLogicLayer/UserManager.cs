@@ -117,16 +117,28 @@ namespace BusinessLogicLayer
             }
            
         }
-        public void EditUser(User model)
+        public BusinessLayerResult<User> EditUser(User model)
         {
-            var findperson = _user.Find(x => x.ID == model.ID);
+            BusinessLayerResult<User> res = new BusinessLayerResult<User>();
             if (model != null)
             {
-                _user.Update(findperson);
+                
+                res.Result = model;
+                res.Result= _user.Find(x => x.ID == model.ID);
+                res.Result.Name = model.Name;
+                res.Result.LastName = model.LastName;
+                res.Result.Email=model.Email;
+                res.Result.Password = model.Password;
+                res.Result.IsAdmin = false;
+                res.Result.UserName = model.UserName;
+                res.Result.ProfileImage = model.ProfileImage;
+
+                _user.Update(res.Result);
+
 
               
             }
-
+            return res;
         }
 
 

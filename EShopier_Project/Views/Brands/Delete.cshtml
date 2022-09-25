@@ -3,14 +3,16 @@
 @{
     ViewBag.Title = "Delete";
 }
+<div class=" text-center">
+    <h4>@Model.Name</h4>
 
-<h2>Marka Sil</h2>
+    <h3>Bu Markayı Silmek İstediğinize Emin misiniz?</h3>
+</div>
 
-<h3>Bu Markayı Silmek İstediğinize Emin misiniz?</h3>
 <div>
-    <h4>Marka</h4>
+    
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal col-sm-offset-4">
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -40,10 +42,10 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-         <div class="form-actions no-color">
-              <input type="submit" value="Sil" class="btn btn-danger" /> |
+         <div class="form-actions no-color col-sm-offset-5">
+              <input type="submit" value="Sil" class="btn btn-danger" /> 
     
-              <a href="/Brands/Index"><input type="button" value="Listeye Geri Dön" class="btn btn-primary" /></a>
+              <a href="/Brands/Index"><input type="button" value="Listeye Geri Dön" class="btn btn-warning" /></a>
 
          </div>
     }

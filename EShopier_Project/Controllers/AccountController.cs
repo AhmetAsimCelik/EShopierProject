@@ -76,10 +76,12 @@ namespace EShopier_Project.Controllers
         [HttpPost]
         public ActionResult AccountEdit(User model)
         {
-            
+            BusinessLayerResult<User> res = um.EditUser(model);
+
             um.EditUser(model);
             //Session.Clear();
-            //User currentUser = Session["login"] as User;            
+            Session["login"] = res.Result; 
+
             return RedirectToAction("ShowAccount");
         }
 

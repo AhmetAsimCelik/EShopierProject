@@ -3,67 +3,67 @@
 @{
     ViewBag.Title = "AccountDelete";
 }
-
-<h2>Hesabı Sil</h2>
-
-<h3>Hesabı Silmek İstediğinize Emin misiniz ?</h3>
 <div>
-    <h4>Kullanıcı Hesabı</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+    <div class=" text-center">
+        <h4>@Model.UserName ,</h4>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+        <h3>Hesabı Silmek İstediğinize Emin misiniz ?</h3>
+        
+    </div>
+    
+    <div>
+        
+        <hr />       
+            <dl class="dl-horizontal  col-sm-offset-4">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UserName)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.UserName)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.UserName)
+                </dd>              
 
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
 
 
 
-    </dl>
+            </dl>
+        
+       
 
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-            <div class="form-actions no-color">
-               <input type="submit" value="Hesabı Sil" class="btn btn-danger" />
-                
-               <a href="/Account/ShowAccount"><input type="button" value="Profile Geri Dön" class="btn btn-warning" /></a>
+            <div class="form-actions no-color col-sm-offset-5">
+                <input type="submit" value="Hesabı Sil" class="btn btn-danger" />
+
+                <a href="/Account/ShowAccount"><input type="button" value="Profile Geri Dön" class="btn btn-warning" /></a>
 
             </div>
-    }
+        }
+    </div>
+
 </div>
