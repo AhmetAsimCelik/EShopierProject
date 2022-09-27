@@ -12,6 +12,7 @@ using Eshopier.DAL;
 using BusinessLogicLayer;
 using System.IO;
 using static System.Net.WebRequestMethods;
+using System.Web.UI.WebControls;
 
 namespace EShopier_Project.Controllers
 {
@@ -59,7 +60,7 @@ namespace EShopier_Project.Controllers
            
             if (ModelState.IsValid)
             {
-                if (ProfileImage.ContentLength > 0)
+                if (ProfileImage!=null)
                 {
                     var dosyaadi = Path.GetFileName(ProfileImage.FileName);
                     var uzanti = Path.Combine(Server.MapPath("~/Content/images"), dosyaadi);
@@ -67,6 +68,11 @@ namespace EShopier_Project.Controllers
 
                     ProfileImage.SaveAs(uzanti);
                     product.ProfileImage = dosyaadi;
+                }
+                else
+                {
+                    product.ProfileImage ="productempty.jpg";
+
                 }
                 product.AddDate = DateTime.Now;
                 db.Products.Add(product); 
@@ -101,10 +107,26 @@ namespace EShopier_Project.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "ID,Name,UnitPrice,UnitStock,BrandID,CategoryID,AddDate,ProfileImage")] Product product)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,Name,UnitPrice,UnitStock,BrandID,CategoryID,AddDate,ProfileImage")] Product product, HttpPostedFileBase ProfileImage)
         {
             if (ModelState.IsValid)
             {
+                
+                if(ProfileImage!=null)
+                {
+                    var dosyaadi = Path.GetFileName(ProfileImage.FileName);
+                    var uzanti = Path.Combine(Server.MapPath("~/Content/images"), dosyaadi);
+
+                    ProfileImage.SaveAs(uzanti);
+                    product.ProfileImage = dosyaadi;
+                }
+                else
+                {
+                    product.ProfileImage = "productempty.jpg";
+
+                }
+
+
                 db.Entry(product).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

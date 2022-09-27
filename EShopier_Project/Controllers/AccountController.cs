@@ -3,6 +3,7 @@ using BusinessLogicLayer.Result;
 using EShopier.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -30,6 +31,22 @@ namespace EShopier_Project.Controllers
             }
 
             return View(res.Result);
+
+
+        }
+        [HttpPost]
+        public ActionResult ShowAccount(User model ,HttpPostedFileBase ProfileImage)
+        {
+            var dosyaadi = Path.GetFileName(ProfileImage.FileName);
+            var uzanti = Path.Combine(Server.MapPath("~/Content/images"), dosyaadi);
+
+
+            ProfileImage.SaveAs(uzanti);
+            model.ProfileImage = dosyaadi;
+            BusinessLayerResult<User> res = um.EditUser(model);
+            um.EditUser(model);
+            Session["login"] = res.Result;
+            return RedirectToAction("ShowAccount");
 
 
         }

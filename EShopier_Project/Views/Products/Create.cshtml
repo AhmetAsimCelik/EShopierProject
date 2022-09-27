@@ -3,16 +3,18 @@
 @{
     ViewBag.Title = "Create";
 }
+<div class=" text-center">
+    <h2>Ürün Oluştur</h2>
+</div>
 
-<h2>Ürün Oluştur</h2>
 
 
 @using (Html.BeginForm("Create" , "Products" ,FormMethod.Post, new {enctype="multipart/form-data" })) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Ürünler</h4>
+    <div class="form-horizontal col-sm-offset-4">
+       
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -67,16 +69,14 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Oluştur" class="btn btn-success" />
+                <a href="/Products/Index"><input type="button" value="Listeye Geri Dön" class="btn btn-warning" /></a>
+
             </div>
         </div>
     </div>
 }
 
-<div>
-   
-    <a href="/Products/Index"><input type="submit" value="Listeye Geri Dön" class="btn btn-primary" /></a>
 
-</div>
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

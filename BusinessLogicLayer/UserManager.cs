@@ -24,29 +24,29 @@ namespace BusinessLogicLayer
             {
                 if (u.UserName == data.UserName)
                 {
-                    result.AddError(ErrorMessageCode.UsernameAlreadyExists, "Kayıtlı kullanıcı adı");
+                    result.AddError(ErrorMessageCode.UsernameAlreadyExists, "! Kayıtlı kullanıcı adı");
 
                 }
                 if (u.Email == data.Email)
                 {
-                    result.AddError(ErrorMessageCode.EmailAlreadyExists, "Kayıtlı email adresi");
+                    result.AddError(ErrorMessageCode.EmailAlreadyExists, "! Kayıtlı email adresi");
                 }
-                if (data.Password != data.Password)
+                if (data.Password != data.PasswordAgain)
                 {
-                    result.AddError(ErrorMessageCode.NotSamePassword, "Girdiğiniz Şifreler Uyuşmuyor");
+                    result.AddError(ErrorMessageCode.NotSamePassword, "! Girdiğiniz Şifreler Uyuşmuyor");
                 }
             }
             else
             {
-                int dbresult = _user.Instert(new User()
+                int dbresult =_user.Instert(new User
                 {
                     UserName = data.UserName,
                     Name = data.Name,
-                    Email = data.Email,
+                    LastName = data.LastName,
                     Password = data.Password,
-                    LastName = data.LastName
-
-
+                    Email = data.Email,
+                    ProfileImage = data.ProfileImage,
+                    IsAdmin = false,
                 });
 
             }

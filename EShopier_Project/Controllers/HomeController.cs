@@ -99,7 +99,8 @@ namespace EShopier_Project.Controllers
           
             if (ModelState.IsValid)
             {
-                if (ProfileImage.ContentLength > 0)
+              
+                if (ProfileImage!=null)
                 {
                     var dosyaadi = Path.GetFileName(ProfileImage.FileName);
                     var uzanti = Path.Combine(Server.MapPath("~/Content/images"), dosyaadi);
@@ -108,17 +109,24 @@ namespace EShopier_Project.Controllers
                     model.ProfileImage = dosyaadi;
                     
                 }
-                if (model.Password == model.PasswordAgain)
-                {
-                    um.UserRegister(model);
-                }
                 else
                 {
-                    return View();
+                    model.ProfileImage = "bos-profil.png";
                 }
+                BusinessLayerResult<User> res = um.RegisterUser(model);
+               
+                if (res.Errors.Count > 0)
+                {
+                    res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
+                    return View(model);
+                }
+                return RedirectToAction("Login");
             }
 
-            return RedirectToAction("Login");
+          
+            return View(model);
+           
+
 
         }
         public ActionResult Logout()

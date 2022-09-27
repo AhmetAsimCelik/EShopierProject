@@ -127,6 +127,7 @@
     <Content Include="Content\images\4.png" />
     <Content Include="Content\images\404\404.png" />
     <Content Include="Content\images\aa.png" />
+    <Content Include="Content\images\Adsız.png" />
     <Content Include="Content\images\blog\blog-one.jpg" />
     <Content Include="Content\images\blog\blog-three.jpg" />
     <Content Include="Content\images\blog\blog-two.jpg" />
@@ -135,9 +136,11 @@
     <Content Include="Content\images\blog\man-three.jpg" />
     <Content Include="Content\images\blog\man-two.jpg" />
     <Content Include="Content\images\blog\socials.png" />
+    <Content Include="Content\images\bos-profil.png" />
     <Content Include="Content\images\cart\one.png" />
     <Content Include="Content\images\cart\three.png" />
     <Content Include="Content\images\cart\two.png" />
+    <Content Include="Content\images\empty.jpg" />
     <Content Include="Content\images\home\bg_border.png" />
     <Content Include="Content\images\home\gallery1.jpg" />
     <Content Include="Content\images\home\gallery2.jpg" />
@@ -170,6 +173,7 @@
     <Content Include="Content\images\home\sale.png" />
     <Content Include="Content\images\home\searchicon.png" />
     <Content Include="Content\images\home\shipping.jpg" />
+    <Content Include="Content\images\logo2.png" />
     <Content Include="Content\images\product-details\1.jpg" />
     <Content Include="Content\images\product-details\new.jpg" />
     <Content Include="Content\images\product-details\rating.png" />
@@ -177,6 +181,7 @@
     <Content Include="Content\images\product-details\similar1.jpg" />
     <Content Include="Content\images\product-details\similar2.jpg" />
     <Content Include="Content\images\product-details\similar3.jpg" />
+    <Content Include="Content\images\productempty.jpg" />
     <Content Include="Content\images\shop\advertisement.jpg" />
     <Content Include="Content\images\shop\product10.jpg" />
     <Content Include="Content\images\shop\product11.jpg" />
