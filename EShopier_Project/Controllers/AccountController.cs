@@ -91,12 +91,23 @@ namespace EShopier_Project.Controllers
           
         }
         [HttpPost]
-        public ActionResult AccountEdit(User model)
+        public ActionResult AccountEdit(User model, HttpPostedFileBase ProfileImage)
         {
-            BusinessLayerResult<User> res = um.EditUser(model);
+            if (ProfileImage != null)
+            {
+                var dosyaadi = Path.GetFileName(ProfileImage.FileName);
+                var uzanti = Path.Combine(Server.MapPath("~/Content/images"), dosyaadi);
 
-            um.EditUser(model);
-            //Session.Clear();
+                ProfileImage.SaveAs(uzanti);
+                model.ProfileImage = dosyaadi;
+
+            }
+            else
+            {
+                model.ProfileImage = "bos-profil.png";
+            }
+            BusinessLayerResult<User> res = um.EditUser(model);
+          
             Session["login"] = res.Result; 
 
             return RedirectToAction("ShowAccount");

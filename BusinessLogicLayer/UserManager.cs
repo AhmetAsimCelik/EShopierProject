@@ -78,15 +78,34 @@ namespace BusinessLogicLayer
             if (result.Result != null)
             {
                
-            }
+            }           
             else
             {
-                result.AddError(ErrorMessageCode.UsernameOrPassWrong, "Kullanıcı adı veya şifre hatası.");
+                if (model.UserName == null)
+                {
+                    result.AddError(ErrorMessageCode.EmptyUserName, "! Kullanıcı adı boş bırakılamaz.");
 
+                }
+                else if (model.Password == null)
+                {
+                    result.AddError(ErrorMessageCode.EmptyPassword, "! Şifre boş bırakılamaz.");
+
+
+                }
+                //else if (result.Result.UserName != model.UserName)
+                //{
+
+                //    result.AddError(ErrorMessageCode.WrongUserName, "! Hatalı Kullanıcı Adı.");
+                //}
+                //else if (result.Result.Password != model.Password)
+                //{
+
+                //    result.AddError(ErrorMessageCode.WrongPassword, "! Hatalı Şifre.");
+                //}
+                result.AddError(ErrorMessageCode.UsernameOrPassWrong, "! Kullanıcı adı veya Şifre hatası.");
 
             }
             return result;
-
         }
         public BusinessLayerResult<User> GetUserById(int? id)
         {

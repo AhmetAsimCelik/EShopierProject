@@ -67,27 +67,28 @@ namespace EShopier_Project.Controllers
         [HttpPost]
         public ActionResult Login(LoginUser model)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    um.UserLogin(model);
-            //}
-            BusinessLayerResult<User> res = um.UserLogin(model);
-
-            if (res.Errors.Count > 0)
+            if (ModelState.IsValid)
             {
-                if (res.Errors.Find(x => x.Code == ErrorMessageCode.UserIsNotActive) != null)
-                {
-                    ViewBag.SetLink = "http://Home/UserActivate";
-                }
+                BusinessLayerResult<User> res = um.UserLogin(model);
 
-                res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
-                return View(model);
+                if (res.Errors.Count > 0)
+                {
+                    //if (res.Errors.Find(x => x.Code == ErrorMessageCode.UserIsNotActive) != null)
+                    //{
+                    //    ViewBag.SetLink = "http://Home/UserActivate";
+                    //}
+
+                    res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
+                    return View(model);
+                }
+                Session["login"] = res.Result;
+                return RedirectToAction("Index");
             }
 
-            Session["login"] = res.Result;    
-            return RedirectToAction("Index"); 
 
-            
+            return View(model);
+
+
         }
         public ActionResult Register()
         {

@@ -8,7 +8,7 @@
 </div>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("AccountEdit", "Account", FormMethod.Post, new {enctype= "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     

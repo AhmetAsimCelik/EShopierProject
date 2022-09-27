@@ -25,7 +25,7 @@ namespace EShopier.Entities.ViewModels
         [DisplayName("Şifre Tekrar"), Required(ErrorMessage = "! {0} alanı boş geçilemez."), DataType(DataType.Password), Compare("Password", ErrorMessage = "! Girdiğiniz şifreler uyuşmuyor.")]
         public string PasswordAgain { get; set; }
 
-        [DisplayName("Email"), Required(ErrorMessage = "! {0} alanı boş geçilemez."), EmailAddress(ErrorMessage = "{0} alanı için geçerli bir mail adresi giriniz.")]
+        [DisplayName("Email"), Required(ErrorMessage = "! {0} alanı boş geçilemez."), EmailAddress(ErrorMessage = "! {0} alanı için geçerli bir mail adresi giriniz.")]
         public string Email { get; set; }
 
         //[Required(ErrorMessage = "{0} alanı boş geçilemez.")]
