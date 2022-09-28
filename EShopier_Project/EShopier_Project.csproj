@@ -128,6 +128,7 @@
     <Content Include="Content\images\404\404.png" />
     <Content Include="Content\images\aa.png" />
     <Content Include="Content\images\Adsız.png" />
+    <Content Include="Content\images\airforce.png" />
     <Content Include="Content\images\blog\blog-one.jpg" />
     <Content Include="Content\images\blog\blog-three.jpg" />
     <Content Include="Content\images\blog\blog-two.jpg" />
@@ -173,7 +174,11 @@
     <Content Include="Content\images\home\sale.png" />
     <Content Include="Content\images\home\searchicon.png" />
     <Content Include="Content\images\home\shipping.jpg" />
+    <Content Include="Content\images\iphone14.jpg" />
+    <Content Include="Content\images\iphone6.jpg" />
     <Content Include="Content\images\logo2.png" />
+    <Content Include="Content\images\nikehırka.jpg" />
+    <Content Include="Content\images\noton.png" />
     <Content Include="Content\images\product-details\1.jpg" />
     <Content Include="Content\images\product-details\new.jpg" />
     <Content Include="Content\images\product-details\rating.png" />
@@ -182,6 +187,8 @@
     <Content Include="Content\images\product-details\similar2.jpg" />
     <Content Include="Content\images\product-details\similar3.jpg" />
     <Content Include="Content\images\productempty.jpg" />
+    <Content Include="Content\images\puma.jpg" />
+    <Content Include="Content\images\samsungtv.jpg" />
     <Content Include="Content\images\shop\advertisement.jpg" />
     <Content Include="Content\images\shop\product10.jpg" />
     <Content Include="Content\images\shop\product11.jpg" />
@@ -189,6 +196,8 @@
     <Content Include="Content\images\shop\product7.jpg" />
     <Content Include="Content\images\shop\product8.jpg" />
     <Content Include="Content\images\shop\product9.jpg" />
+    <Content Include="Content\images\stansmit.jpg" />
+    <Content Include="Content\images\zaramont.jpg" />
     <Content Include="Content\js\bootstrap.min.js" />
     <Content Include="Content\js\contact.js" />
     <Content Include="Content\js\gmaps.js" />

@@ -160,7 +160,18 @@ namespace BusinessLogicLayer
             return res;
         }
 
+        public User FindUser(User model)
+        {
+           var fınd= _user.Find(x => x.ID == model.ID);
 
+           if (model.ProfileImage == null)
+           {
+                model.ProfileImage = fınd.ProfileImage;
+
+           }
+
+            return fınd;
+        }
 
 
 

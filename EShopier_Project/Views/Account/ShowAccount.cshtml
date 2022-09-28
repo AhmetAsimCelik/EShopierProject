@@ -1,6 +1,5 @@
 ﻿@model EShopier.Entities.User
-@*@using EShopier.Entities
-    @model User*@
+
 @{
     ViewBag.Title = "Account";
 }
@@ -38,6 +37,18 @@
                         <div class="form-group">
                             @using (Html.BeginForm("ShowAccount", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
                             {
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.ID)
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.Name)
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.UserName)
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.LastName)
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.Email)
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.Password)
                                 <div class="col-md-4 col-sm-offset-3">
                                     @Html.EditorFor(model => model.ProfileImage, new { htmlAttributes = new { @class = "form-group", type = "file" } })
                                     @Html.ValidationMessageFor(model => model.ProfileImage, "", new { @class = "text-danger" })

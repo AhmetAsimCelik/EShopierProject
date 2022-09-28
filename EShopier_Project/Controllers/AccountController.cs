@@ -37,14 +37,21 @@ namespace EShopier_Project.Controllers
         [HttpPost]
         public ActionResult ShowAccount(User model ,HttpPostedFileBase ProfileImage)
         {
-            var dosyaadi = Path.GetFileName(ProfileImage.FileName);
-            var uzanti = Path.Combine(Server.MapPath("~/Content/images"), dosyaadi);
+            if (ProfileImage != null)
+            {
+                var dosyaadi = Path.GetFileName(ProfileImage.FileName);
+                var uzanti = Path.Combine(Server.MapPath("~/Content/images"), dosyaadi);
 
+                ProfileImage.SaveAs(uzanti);
+                model.ProfileImage = dosyaadi;
 
-            ProfileImage.SaveAs(uzanti);
-            model.ProfileImage = dosyaadi;
+            }
+            else
+            {
+                model.ProfileImage = "bos-profil.png";
+            }
             BusinessLayerResult<User> res = um.EditUser(model);
-            um.EditUser(model);
+            
             Session["login"] = res.Result;
             return RedirectToAction("ShowAccount");
 
@@ -91,20 +98,11 @@ namespace EShopier_Project.Controllers
           
         }
         [HttpPost]
-        public ActionResult AccountEdit(User model, HttpPostedFileBase ProfileImage)
+        public ActionResult AccountEdit(User model)
         {
-            if (ProfileImage != null)
+           if (model.ProfileImage == null)
             {
-                var dosyaadi = Path.GetFileName(ProfileImage.FileName);
-                var uzanti = Path.Combine(Server.MapPath("~/Content/images"), dosyaadi);
-
-                ProfileImage.SaveAs(uzanti);
-                model.ProfileImage = dosyaadi;
-
-            }
-            else
-            {
-                model.ProfileImage = "bos-profil.png";
+                um.FindUser(model);
             }
             BusinessLayerResult<User> res = um.EditUser(model);
           

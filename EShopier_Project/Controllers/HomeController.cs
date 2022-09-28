@@ -73,11 +73,7 @@ namespace EShopier_Project.Controllers
 
                 if (res.Errors.Count > 0)
                 {
-                    //if (res.Errors.Find(x => x.Code == ErrorMessageCode.UserIsNotActive) != null)
-                    //{
-                    //    ViewBag.SetLink = "http://Home/UserActivate";
-                    //}
-
+                   
                     res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
                     return View(model);
                 }
