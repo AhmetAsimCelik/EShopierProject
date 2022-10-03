@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrandManager.cs" />
+    <Compile Include="CartManager.cs" />
     <Compile Include="CatManager.cs" />
     <Compile Include="ProManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

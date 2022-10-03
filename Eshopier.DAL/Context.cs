@@ -12,9 +12,9 @@ namespace Eshopier.DAL
     {
         public Context()
         {
-            Database.Connection.ConnectionString = "Server=DESKTOP-N031PB4; Database=EShopier_Project; uid=sa; pwd=1";
+            Database.Connection.ConnectionString = "Server=DESKTOP-N031PB4; Database=EShopierProject; uid=sa; pwd=1";
             Database.SetInitializer(new İnitializer());
-           
+          
         }
         public DbSet<User> Users { get; set; }
 

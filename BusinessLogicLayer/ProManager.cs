@@ -17,5 +17,9 @@ namespace BusinessLogicLayer
             return product.List();
             
         }
+        public Product GetProduct(int id)
+        {
+            return product.Find(c => c.ID == id);
+        }
     }
 }

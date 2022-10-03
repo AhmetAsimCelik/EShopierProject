@@ -20,7 +20,8 @@ namespace EShopier_Project.Controllers
         ProManager pro = new ProManager();
         UserManager um = new UserManager();
         CatManager cm = new CatManager();
-        BrandManager bm = new BrandManager();  
+        BrandManager bm = new BrandManager();
+        CartManager cartm = new CartManager();
        
         public ActionResult Index()
         {
@@ -77,6 +78,7 @@ namespace EShopier_Project.Controllers
                     res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
                     return View(model);
                 }
+                
                 Session["login"] = res.Result;
                 return RedirectToAction("Index");
             }
@@ -132,19 +134,27 @@ namespace EShopier_Project.Controllers
 
             return RedirectToAction("Index");
         }
-        public ActionResult Cart()
-        {
-
-            return View();
-
-        }
-          
+      
+   
         public ActionResult Contact()
         {
 
             return View();
 
         }
+
+        public ActionResult MostExpensive()
+        {
+            return View("Index", pro.Productlist().OrderByDescending(x => x.UnitPrice).ToList());
+        }
+        public ActionResult MostCheap()
+        {
+            return View("Index", pro.Productlist().OrderBy(x => x.UnitPrice).ToList());
+        }
+
+
+
+
 
     }
 }

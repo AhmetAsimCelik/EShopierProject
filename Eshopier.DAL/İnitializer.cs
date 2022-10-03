@@ -84,8 +84,8 @@ namespace Eshopier.DAL
 
             Product airforce = new Product();
             airforce.Name = "Airforce";
-            airforce.UnitPrice = "1900";
-            airforce.UnitStock = "10";
+            airforce.UnitPrice = 1900;
+            airforce.UnitStock = 10;
             airforce.ProfileImage = "airforce.png";
             airforce.Brand = nike;
             airforce.Category = ayakkabı;
@@ -94,8 +94,8 @@ namespace Eshopier.DAL
 
             Product noton = new Product();
             noton.Name = "Noton";
-            noton.UnitPrice = "10000";
-            noton.UnitStock = "10";
+            noton.UnitPrice = 10000;
+            noton.UnitStock = 10;
             noton.ProfileImage = "noton.png";
             noton.AddDate = DateTime.Now;
             noton.Category = telefon;
@@ -104,8 +104,8 @@ namespace Eshopier.DAL
 
             Product stansmit = new Product();
             stansmit.Name = "StanSmit";
-            stansmit.UnitPrice = "1499";
-            stansmit.UnitStock = "10";
+            stansmit.UnitPrice = 1499;
+            stansmit.UnitStock = 10;
             stansmit.ProfileImage = "stansmit.jpg";
             stansmit.Brand = adidas;
             stansmit.Category = ayakkabı;
@@ -114,8 +114,8 @@ namespace Eshopier.DAL
 
             Product iphone6 = new Product();
             iphone6.Name = "İphone 6S";
-            iphone6.UnitPrice = "4000";
-            iphone6.UnitStock = "10";
+            iphone6.UnitPrice = 4000;
+            iphone6.UnitStock = 10;
             iphone6.ProfileImage = "iphone6.jpg";
             iphone6.Brand = apple;
             iphone6.Category = telefon;
@@ -124,8 +124,8 @@ namespace Eshopier.DAL
 
             Product nikehirka = new Product();
             nikehirka.Name = "Nike Hırka";
-            nikehirka.UnitPrice = "899";
-            nikehirka.UnitStock = "10";
+            nikehirka.UnitPrice = 899;
+            nikehirka.UnitStock = 10;
             nikehirka.ProfileImage = "nikehırka.jpg";
             nikehirka.Brand = nike;
             nikehirka.Category = giyim;
@@ -134,8 +134,8 @@ namespace Eshopier.DAL
 
             Product samsungtv = new Product();
             samsungtv.Name = "Samsung Curved";
-            samsungtv.UnitPrice = "23500";
-            samsungtv.UnitStock = "10";
+            samsungtv.UnitPrice = 23500;
+            samsungtv.UnitStock = 10;
             samsungtv.ProfileImage = "samsungtv.jpg";
             samsungtv.AddDate = DateTime.Now;
             samsungtv.Category = televizyon;
@@ -144,8 +144,8 @@ namespace Eshopier.DAL
 
             Product zaramont = new Product();
             zaramont.Name = "Zara Mont";
-            zaramont.UnitPrice = "989";
-            zaramont.UnitStock = "10";
+            zaramont.UnitPrice = 989;
+            zaramont.UnitStock = 10;
             zaramont.ProfileImage = "zaramont.jpg";
             zaramont.AddDate = DateTime.Now;
             zaramont.Category = giyim;
@@ -154,8 +154,8 @@ namespace Eshopier.DAL
 
             Product iphone14 = new Product();
             iphone14.Name = "İphone 14 Pro Max";
-            iphone14.UnitPrice = "41000";
-            iphone14.UnitStock = "10";
+            iphone14.UnitPrice = 41000;
+            iphone14.UnitStock = 10;
             iphone14.ProfileImage = "iphone14.jpg";
             iphone14.AddDate = DateTime.Now;
             iphone14.Category = telefon;
@@ -164,8 +164,8 @@ namespace Eshopier.DAL
 
             Product pumaroma = new Product();
             pumaroma.Name = "Puma Roma";
-            pumaroma.UnitPrice = "999";
-            pumaroma.UnitStock = "10";
+            pumaroma.UnitPrice = 999;
+            pumaroma.UnitStock = 10;
             pumaroma.ProfileImage = "puma.jpg";
             pumaroma.AddDate = DateTime.Now;
             pumaroma.Category = ayakkabı;

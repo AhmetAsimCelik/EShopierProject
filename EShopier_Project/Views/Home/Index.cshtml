@@ -4,9 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<section id="slider">
-    <!--slider-->
-    @*<div class="container">
+@*<section id="slider">
+    
+    <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div id="slider-carousel" class="carousel slide" data-ride="carousel">
@@ -67,8 +67,8 @@
 
             </div>
         </div>
-    </div>*@
-</section><!--/slider-->
+    </div>
+</section>*@
 
 <section>
     <div class="container">
@@ -76,7 +76,8 @@
             <div class="col-sm-3">
                 @Html.Partial("_PartialCategory")
             </div>
-
+       
+        
             <div class="col-sm-9 padding-right">
                 <div class="features_items">
                     <!--features_items-->
@@ -97,7 +98,11 @@
                                         <div class="overlay-content">
                                             <h2>@item.UnitPrice TL</h2>
                                             <p>@item.Name</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Sepete Ekle</a>
+                                           
+                                                
+                                                <a href="/Cart/AddToCart/@item.ID" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Sepete Ekle</a>
+                                                                                          
+                                           
                                         </div>
                                     </div>
                                 </div>

@@ -1,0 +1,92 @@
+﻿
+@model EShopier.Entities.ViewModels.CartModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<body>
+
+
+    <section id="cart_items">
+        <div class="container">
+            <div class="breadcrumbs">
+                <ol class="breadcrumb">
+                    <li><a href="/Home/Index">Menü</a></li>
+                    <li class="active">Sepetim</li>
+                </ol>
+            </div>
+            <div class="table-responsive cart_info">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr class="cart_menu">
+                            <td class="image">Ürün Detayları</td>
+                            <td class="description"></td>
+                            <td class="price">Fiyat</td>
+                            <td class="quantity">  Adet</td>
+                            <td class="total">Toplam Fiyat</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CartLines)
+                        {
+                            <tr>
+                                <td class="cart_product">
+                                    <img src="~/Content/images/@item.Product.ProfileImage" alt="" width="70" height="70"/>
+                                </td>
+                                <td class="cart_description">
+                                    <h4><a href="">@item.Product.Name</a></h4>
+                                    <p>Ürün ID: @item.Product.ID</p>
+                                </td>
+                                <td class="cart_price">
+                                    <p>@item.Product.UnitPrice ₺</p>
+                                </td>
+                                <td class="cart_quantity">
+                                    @*<div class="cart_quantity_button">
+                                    <a class="cart_quantity_up" href=""> + </a>
+                                    <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
+                                    <a class="cart_quantity_down" href=""> - </a>
+                                    </div>*@
+                                    <p>@item.Quantity</p>
+                                </td>
+                                <td class="cart_total">
+                                    <p class="cart_total_price">@(item.Product.UnitPrice*item.Quantity) ₺ </p>
+                                </td>
+                                <td class="cart_delete">
+                                    <a class="cart_quantity_delete" href="/Cart/RemoveFromCart/@item.Product.ID"><i class="fa fa-times"></i></a>
+                                </td>
+                            </tr>
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section> 
+
+    <section id="do_action">
+        <div class="container">
+            <div class="heading">
+                
+                <p>Alışverişinizi Tamamlamak İçin Sepetinizi Onaylayınız.</p>
+            </div>
+            <div class="row">
+               
+                <div class="col-sm-6">
+                    <div class="total_area">
+                        <ul>
+                            <li>Toplam Ürün Adeti <span>@Model.TotalQuantity()</span></li>
+                            <li>İndirim <span>%20</span></li>
+                            <li>Kargo Bedeli<span>12 ₺</span></li>
+                            <li>Toplam Fiyat <span>@(Model.Total()+12) ₺</span></li>
+                        </ul>
+                        <a class="btn btn-default update" href="/Home/Index">Alışverişe Devam Et</a>
+                        <a class="btn btn-default check_out" href="/Cart/CheckOut">Ödeme</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+

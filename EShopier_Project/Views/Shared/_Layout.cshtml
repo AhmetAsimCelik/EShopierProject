@@ -45,7 +45,7 @@
                         <div class="contactinfo">
                             <ul class="nav nav-pills">
                                 <li><a href="#"><i class="fa fa-phone"></i> +90 507 793 14 84</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> ahmetasimcelik@gmail..com</a></li>
+                                <li><a href="#"><i class="fa fa-envelope"></i> ahmetasimcelik@gmail.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -110,7 +110,7 @@
 
 
                                     {
-                                        <li><a href="/Home/Cart"><i class="fa fa-shopping-cart"></i> Sepetim</a></li>
+                                        <li><a href="/Cart/Index"><i class="fa fa-shopping-cart"></i> Sepetim</a></li>
                                         <li><a href="/Account/ShowAccount"><i class="fa fa-user"></i> @user.UserName</a></li>
 
                                         <li><a href="/Home/Logout"><i class="fa fa-sign-out"></i> Çıkış</a></li>
@@ -125,8 +125,6 @@
                                     <li><a href="/Home/Register"><i class="fa fa-male"></i> Kayıt Ol</a></li>
                                     <li><a href="/Home/Login"><i class="fa fa-sign-in"></i> Giriş</a></li>
                                 }
-
-
 
 
                             </ul>
@@ -152,7 +150,15 @@
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
                                     <li><a href="/Home/Index" class="active">Ana Menü</a></li>
-                                    <li><a href="/Products/ProdutDetails">Ürünler</a></li>
+                                    <li><a href="/Products/ProdutDetails">Ürün Detayları</a></li>
+                                    <li class="dropdown">
+                                        <a href="#">Sırala<i class="fa fa-angle-down"></i></a>
+                                        <ul role="menu" class="sub-menu">
+                                            <li><a href="/Home/MostCheap">En Ucuz</a></li>
+                                            <li><a href="/Home/MostExpensive">En Pahalı</a></li>
+                                          
+                                        </ul>
+                                    </li>
                                     @*<li><a href="/Categories/Index">Kategoriler</a></li>
                                     <li><a href="/Brands/Index">Markalar</a></li>*@
                                     <li><a href="/Home/Contact">İletişim</a></li>
@@ -162,8 +168,8 @@
 
                     </div>
                 </div>
-            </div><!--/header-bottom-->
-    </header><!--/header-->
+            </div>
+    </header>
 
     @RenderBody()
 
