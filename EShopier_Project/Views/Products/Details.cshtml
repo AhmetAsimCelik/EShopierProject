@@ -4,108 +4,117 @@
     ViewBag.Title = "Details";
 }
 @*<div class=" text-center">
-    <h2>Ürün Detayı</h2>
-    <h4>@Model.Name</h4>
-</div>
-
-<div>
-   
-    <hr />
-    <dl class="dl-horizontal col-sm-offset-4">
-        <dt>
-            @Html.DisplayNameFor(model => model.BrandID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.BrandID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CategoryID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CategoryID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UnitPrice)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UnitPrice)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.UnitStock)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.UnitStock)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AddDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AddDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProfileImage)
-            
-        </dt>
-
-        <dd>
-           
-            <img src="~/Content/images/@Model.ProfileImage" width="50" height="50" />
-            
-        </dd>
-
-    </dl>
-</div>
-<p>
-    <div class=" col-sm-offset-5">
-        <a href="/Products/Edit/@Model.ID"><input type="submit" value="Düzenle" class="btn btn-info" new { id=@Model.ID } /></a>
-        <a href="/Products/Index"><input type="submit" value="Listeye Geri Dön" class="btn btn-warning" /></a>
+        <h2>Ürün Detayı</h2>
+        <h4>@Model.Name</h4>
     </div>
-    
 
-</p>*@
+    <div>
 
-<div class="col-md-4 mb-3">
-    <div class="card">
-        <img src="@Model.ProfileImage" alt="@Model.Name" />
-        <div class="card-body">
-            <h4 class="card-title">
-                <a href="#">@Model.Name</a>
-            </h4>
-            <small class="text-muted">
-                <i class="fa-solid fa-turkish-lira-sign"></i> @Model.UnitPrice
-            </small>
+        <hr />
+        <dl class="dl-horizontal col-sm-offset-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.BrandID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BrandID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CategoryID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UnitPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UnitStock)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UnitStock)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AddDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AddDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProfileImage)
+
+            </dt>
+
+            <dd>
+
+                <img src="~/Content/images/@Model.ProfileImage" width="50" height="50" />
+
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        <div class=" col-sm-offset-5">
+            <a href="/Products/Edit/@Model.ID"><input type="submit" value="Düzenle" class="btn btn-info" new { id=@Model.ID } /></a>
+            <a href="/Products/Index"><input type="submit" value="Listeye Geri Dön" class="btn btn-warning" /></a>
         </div>
-        <div class="card-footer text-center">
-
-            @using (Html.BeginForm("AddToCart", "Cart"))
-
-            {
-                @Html.HiddenFor(x => x.ID)
-                @*<input type="hidden" name="productId" value="@Model.ID" />
-                <input type="hidden" name="quantity" value=1 />*@
-                <button type="submit" class="btn btn-outline-primary btn-sm ml-3" aria-hidden="true">Add To Cart</button>
-            }
-           
 
 
+    </p>*@
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-4 item-photo">
+                <img style="max-width:100%;" src="~/Content/images/@Model.ProfileImage" />
+            </div>
+            <div class="col-xs-5" style="border:0px solid gray">
+                <!-- Datos del vendedor y titulo del producto -->
+                <h3>@Model.Name</h3>
+                <h5 style="color:#337ab7">MarkaID <a href="#">@Model.BrandID</a> 
+                
+                
+                <h6 class="title-price"><small>Adet Fiyatı</small></h6>
+                <h3 style="margin-top:0px;">₺@Model.UnitPrice</h3>
+              
+               
+                <div class="section" style="padding-bottom:20px;">
+                    <h6 class="title-attr"><small>Adet</small></h6>
+                    <div>
+                        <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
+                        <input value="1" />
+                        <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+                    </div>
+                </div>
+
+                <!-- Botones de compra -->
+                <div class="section" style="padding-bottom:20px;">
+                    <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Sepete Ekle</button>
+                    
+                </div>
+            </div>
+
+            
         </div>
     </div>
-</div>
+</body>
