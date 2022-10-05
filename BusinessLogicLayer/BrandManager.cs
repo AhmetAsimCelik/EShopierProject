@@ -1,5 +1,6 @@
 ﻿using Eshopier.DAL;
 using EShopier.Entities;
+using EShopier.Entities.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,5 +21,6 @@ namespace BusinessLogicLayer
         {
             return brand.Find(c => c.ID == id);
         }
+       
     }
 }

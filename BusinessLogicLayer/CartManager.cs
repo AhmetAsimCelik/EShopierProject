@@ -13,14 +13,15 @@ namespace BusinessLogicLayer
     public class CartManager
     {
         Repository<CartModel> cart = new Repository<CartModel>();
-       
-        
-       
-       
-        //public CartModel GetCart(int id)
-        //{
-        //    return cart.Find(c => c. == id);
-        //}
+
+
+
+
+        public void RemoveCart()
+        {
+            CartModel cmodel = new CartModel();
+            cmodel.Clear();
+        }
 
     }
 }

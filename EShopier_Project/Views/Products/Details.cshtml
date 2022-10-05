@@ -89,31 +89,34 @@
                 <img style="max-width:100%;" src="~/Content/images/@Model.ProfileImage" />
             </div>
             <div class="col-xs-5" style="border:0px solid gray">
-                <!-- Datos del vendedor y titulo del producto -->
+                
                 <h3>@Model.Name</h3>
-                <h5 style="color:#337ab7">MarkaID <a href="#">@Model.BrandID</a> 
-                
-                
-                <h6 class="title-price"><small>Adet Fiyatı</small></h6>
-                <h3 style="margin-top:0px;">₺@Model.UnitPrice</h3>
-              
-               
-                <div class="section" style="padding-bottom:20px;">
-                    <h6 class="title-attr"><small>Adet</small></h6>
-                    <div>
-                        <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
-                        <input value="1" />
-                        <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
-                    </div>
-                </div>
+                <h4 style="color:#337ab7">
+                    MarkaID <a href="#">@Model.BrandID</a>
 
-                <!-- Botones de compra -->
-                <div class="section" style="padding-bottom:20px;">
-                    <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Sepete Ekle</button>
-                    
-                </div>
+                    <h5 class="title-price"><small>Adet Fiyatı</small></h5>
+                    <h3 style="margin-top:0px;">₺@Model.UnitPrice</h3>
+
+
+
+                    @using (Html.BeginForm("AddToCart2", "Cart"))
+
+                    {
+                        @Html.HiddenFor(x => x.ID)
+                        <div class="section" style="padding-bottom:20px;">
+                            <h5 class="title-attr"><small>Adet</small></h5>
+                            <div>
+
+                                <input type="number" value="1" name="quantity" />
+
+                            </div>
+                        </div>
+                        <div class="section" style="padding-bottom:20px;">
+                            <button type="submit" class=" btn btn-primary"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Sepete Ekle</button>
+
+                        </div>
+                    }
             </div>
-
             
         </div>
     </div>

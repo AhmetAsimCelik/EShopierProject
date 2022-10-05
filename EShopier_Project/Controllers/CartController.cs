@@ -1,4 +1,5 @@
 ﻿using BusinessLogicLayer;
+using BusinessLogicLayer.Result;
 using EShopier.Entities;
 using EShopier.Entities.ViewModels;
 using System;
@@ -14,6 +15,7 @@ namespace EShopier_Project.Controllers
     {
         CartManager cm = new CartManager();
         ProManager pro = new ProManager();
+        UserManager um = new UserManager();
         
         // GET: Cart
         public ActionResult Index(/*int id*/)
@@ -22,12 +24,45 @@ namespace EShopier_Project.Controllers
         }
         public ActionResult AddToCart(int id)
         {
-            var product = pro.GetProduct(id);
-            if (product != null)
+            User currentUser = Session["login"] as User;
+          
+
+            if (currentUser==null)
             {
-                GetCart().AddProduct(product, 1);
+
+                return View("Error");
             }
-            return RedirectToAction("Index");
+            else
+            {
+                var product = pro.GetProduct(id);
+                if (product != null)
+                {
+                    GetCart().AddProduct(product, 1);
+                }
+                return RedirectToAction("Index");
+
+            }
+            
+        }
+        public ActionResult AddToCart2(int id,int quantity)
+        {
+            User currentUser = Session["login"] as User;
+
+            if (currentUser == null)
+            {
+                return View("Error");
+            }
+            else
+            {
+                var product = pro.GetProduct(id);
+                if (product != null)
+                {
+                    GetCart().AddProduct(product, quantity);
+                }
+                return RedirectToAction("Index");
+            }
+
+           
         }
         public ActionResult RemoveFromCart(int id)
         {
@@ -48,5 +83,16 @@ namespace EShopier_Project.Controllers
             }
             return cart;
         }
+        public ActionResult Error()
+        {
+            return View();
+        }
+        public ActionResult ClearCart()
+        {
+            //cm.RemoveCart();
+            GetCart().Clear();  
+            return RedirectToAction("Index");
+        }
+
     }
 }

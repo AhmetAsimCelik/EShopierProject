@@ -134,8 +134,7 @@ namespace EShopier_Project.Controllers
 
             return RedirectToAction("Index");
         }
-      
-   
+       
         public ActionResult Contact()
         {
 
