@@ -105,6 +105,15 @@ namespace EShopier_Project.Controllers
             
             return PartialView(GetCart());
         }
+        public ActionResult CheckOut()
+        {
+            return View();
+        }
+        public ActionResult deneme()
+        {
+            return View();
+        }
+       
 
     }
 }
