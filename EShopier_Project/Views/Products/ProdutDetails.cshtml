@@ -30,21 +30,26 @@
                                 <h2>@item.Name</h2>
                                 <p>ID: @item.ID</p>
                                 <img src="~/Content/images/product-details/rating.png" alt="" />
-                                <span>
-                                    <span>@item.UnitPrice TL</span>
-                                    <label>Quantity:</label>
-                                    <input type="text" value="3" />
-                                    <button type="button" class="btn btn-fefault cart">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        Sepete Ekle
-                                    </button>
-                                </span>
+                               
+                                    
+                                    <span>
+                                        <span>@item.UnitPrice TL</span>
+                                        <label>Quantity:</label>
+                                        <input type="text" value="1" name="quantity" />
+                                        <button type="submit" class="btn btn-fefault cart">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            Sepete Ekle
+                                        </button>
+                                        
+
+                                    </span>
+                                
                                 <p><b>Stok:</b> @item.UnitStock</p>
                                 <p><b>KategoriID:</b> @item.CategoryID</p>
-                                <p><b>MarkaID:</b>@item.Category.Name</p>                               
-                            </div><!--/product-information-->
+                                <p><b>MarkaID:</b>@item.BrandID</p>
+                            </div>
                         </div>
-                    </div><!--/product-details-->
+                    </div>
 
                 </div>
             }

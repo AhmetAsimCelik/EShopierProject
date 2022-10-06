@@ -24,21 +24,20 @@
                         @Html.TextBoxFor(model => model.PasswordAgain, new { @placeholder = "Tekrar Şifreniz", type = "password" })
                         @Html.TextBoxFor(model => model.ProfileImage, new { @class = "form-group", type = "file" })
 
-                        @*<div class="form-group">
-                @Html.LabelFor(model => model.ProfileImage, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-4">
-                    @Html.EditorFor(model => model.ProfileImage, new { htmlAttributes = new { @class = "form-group", type = "file" } })
-                    @Html.ValidationMessageFor(model => model.ProfileImage, "", new { @class = "text-danger" })
 
-                </div>
-            </div>*@
 
-                        <button type="submit" class="btn btn-default">Kayıt Ol</button>
+                        <button type="submit" class="btn btn-default" id="btn">Kayıt Ol</button>
 
                     }
 
                 </div>
+                <script>
+                    $('#btn').click(function () {
+                        alert('Hesabınız Oluşturuldu Giriş Yapabilirsiniz.');
+                    });
+                </script>
             </div>
         </div>
     </div>
+    
 

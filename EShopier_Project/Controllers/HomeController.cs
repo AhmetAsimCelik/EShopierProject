@@ -16,7 +16,7 @@ namespace EShopier_Project.Controllers
     {
         
 
-        // GET: Home
+        
         ProManager pro = new ProManager();
         UserManager um = new UserManager();
         CatManager cm = new CatManager();

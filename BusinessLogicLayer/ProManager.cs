@@ -21,5 +21,17 @@ namespace BusinessLogicLayer
         {
             return product.Find(c => c.ID == id);
         }
+        public Product FindProduct(Product model)
+        {
+            var fınd = product.Find(x => x.ID == model.ID);
+
+            if (model.ProfileImage == null)
+            {
+                model.ProfileImage = fınd.ProfileImage;
+
+            }
+
+            return fınd;
+        }
     }
 }

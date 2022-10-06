@@ -42,6 +42,19 @@ namespace EShopier_Project.Controllers
             }
             return View(product);
         }
+        public async Task<ActionResult> DetailsForAdmin(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = await db.Products.FindAsync(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
 
         // GET: Products/Create
         public ActionResult Create()
@@ -111,7 +124,10 @@ namespace EShopier_Project.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+                //if (ProfileImage == null)
+                //{
+                //    pro.FindProduct(product);
+                //}
                 if(ProfileImage!=null)
                 {
                     var dosyaadi = Path.GetFileName(ProfileImage.FileName);
@@ -119,14 +135,15 @@ namespace EShopier_Project.Controllers
 
                     ProfileImage.SaveAs(uzanti);
                     product.ProfileImage = dosyaadi;
-                }
+                }               
                 else
                 {
-                    product.ProfileImage = "productempty.jpg";
+                    pro.FindProduct(product);
+                    //product.ProfileImage = "productempty.jpg";
+
+
 
                 }
-
-
                 db.Entry(product).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");

@@ -100,8 +100,9 @@
 
                                             </ul>
                                         </li>
+                                        @Html.Action("Summary", "Cart")
                                         <li><a href="/Account/ShowAccount"><i class="fa fa-user"></i> @user.UserName</a></li>
-                                        
+
 
                                         <li><a href="/Home/Logout"><i class="fa fa-sign-out"></i> Çıkış</a></li>
 
@@ -110,7 +111,8 @@
 
 
                                     {
-                                        <li><a href="/Cart/Index"><i class="fa fa-shopping-cart"></i> Sepetim</a></li>
+                                        @Html.Action("Summary", "Cart")
+                                        @*<li><a href="/Cart/Index"><i class="fa fa-shopping-cart"></i> Sepetim</a></li>*@
                                         <li><a href="/Account/ShowAccount"><i class="fa fa-user"></i> @user.UserName</a></li>
 
                                         <li><a href="/Home/Logout"><i class="fa fa-sign-out"></i> Çıkış</a></li>

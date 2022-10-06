@@ -40,7 +40,7 @@ namespace EShopier.Entities.ViewModels
             {
                 total = total * 0.90;
             }           
-            else if (quantity < 10)
+            else if (total < 499)
             {
                 total =total+ 12;
             }
@@ -55,10 +55,12 @@ namespace EShopier.Entities.ViewModels
         }
         public double Ship()
         {
-            double total = _cartLines.Sum(x => x.Quantity);
-           
+            //double total = _cartLines.Sum(x => x.Quantity);
+            double total = _cartLines.Sum(x => x.Product.UnitPrice * x.Quantity);
 
-            if (total > 9)
+
+
+            if (total > 499)
             {
                 total= 0;
             }

@@ -292,6 +292,9 @@
     <Content Include="Views\Cart\CheckOut.cshtml" />
     <Content Include="Views\Shared\_PartialHeader.cshtml" />
     <Content Include="Views\Cart\Error.cshtml" />
+    <Content Include="Views\Cart\Summary.cshtml" />
+    <Content Include="Views\Products\DetailsForAdmin.cshtml" />
+    <Content Include="Views\Cart\ErrorForAdmin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -25,8 +25,9 @@ namespace EShopier_Project.Controllers
         public ActionResult AddToCart(int id)
         {
             User currentUser = Session["login"] as User;
-          
 
+           
+           
             if (currentUser==null)
             {
 
@@ -40,9 +41,10 @@ namespace EShopier_Project.Controllers
                     GetCart().AddProduct(product, 1);
                 }
                 return RedirectToAction("Index");
+                
 
             }
-            
+           
         }
         public ActionResult AddToCart2(int id,int quantity)
         {
@@ -87,11 +89,21 @@ namespace EShopier_Project.Controllers
         {
             return View();
         }
+        public ActionResult ErrorForAdmin()
+        {
+            return View();
+        }
         public ActionResult ClearCart()
         {
-            //cm.RemoveCart();
+            
             GetCart().Clear();  
             return RedirectToAction("Index");
+        }
+        public PartialViewResult Summary()
+        {
+
+            
+            return PartialView(GetCart());
         }
 
     }

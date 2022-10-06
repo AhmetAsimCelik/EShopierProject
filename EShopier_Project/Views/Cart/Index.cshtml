@@ -29,7 +29,7 @@
                             <tr class="cart_menu">
                                 <td class="image">Ürün Detayları</td>
                                 <td class="description"></td>
-                                <td class="price">Fiyat</td>
+                                <td class="price">Adet Fiyatı</td>
                                 <td class="quantity">  Adet</td>
                                 <td class="total">Toplam Fiyat</td>
                                 
@@ -80,7 +80,7 @@
                 <div class="heading">
 
 
-                    <p><i class="fa fa-truck" aria-hidden="true"></i>10 Adetten Fazla Ürün Satın Alırsanız Kargo Bedava.</p>
+                    <p><i class="fa fa-truck" aria-hidden="true"></i>500₺ Üstü Siparişinizde Kargo Bedava.</p>
                     <p><i class="fa fa-money" aria-hidden="true"></i>25.000₺ Üzeri Sepet Tutarına %10 İndirim.</p>
                     <hr />
                     <div class=" col-md-offset-0">
@@ -101,7 +101,7 @@
                                 <li>Toplam Ürün Adeti <span>@Model.TotalQuantity()</span></li>
                                 <li>İndirim <span> @Model.Sale()%</span></li>
                                 <li>Kargo Bedeli<span>@Model.Ship() ₺</span></li>
-                                <li>Toplam Fiyat <span>@(Model.Total()+Model.Ship()) ₺</span></li>
+                                <li>Toplam Fiyat <span>@Model.Total() ₺</span></li>
                             </ul>
                             <a class="btn btn-default update" href="/Home/Index">Alışverişe Devam Et</a>
                             <a class="btn btn-default check_out" href="/Cart/CheckOut">Ödeme</a>

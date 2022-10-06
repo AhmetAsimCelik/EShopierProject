@@ -1,0 +1,83 @@
+﻿@model EShopier.Entities.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class=" text-center">
+        <h2>Ürün Detayı</h2>
+        <h4>@Model.Name</h4>
+    </div>
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal col-sm-offset-4">
+            <dt>
+                @Html.DisplayNameFor(model => model.BrandID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BrandID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CategoryID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UnitPrice)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UnitStock)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UnitStock)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.AddDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.AddDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProfileImage)
+
+            </dt>
+
+            <dd>
+
+                <img src="~/Content/images/@Model.ProfileImage" width="50" height="50" />
+
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        <div class=" col-sm-offset-5">
+            <a href="/Products/Edit/@Model.ID"><input type="submit" value="Düzenle" class="btn btn-info" new { id=@Model.ID } /></a>
+            <a href="/Products/Index"><input type="submit" value="Listeye Geri Dön" class="btn btn-warning" /></a>
+        </div>
+
+
+    </p>
