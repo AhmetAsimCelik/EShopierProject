@@ -1,5 +1,7 @@
 ﻿@using EShopier.Entities
-@model List<Product>
+@using PagedList
+@using PagedList.Mvc
+@model  PagedList.IPagedList<Product>
 @{
     ViewBag.Title = "Index";
 }
@@ -73,35 +75,35 @@
 <section>
     <div class="container">
         <div class="row">
-            
+
             <div class="col-sm-3">
                 @Html.Partial("_PartialCategory")
             </div>
-           
-        
+
+
             <div class="col-sm-9 padding-right">
                 <div class="features_items">
                     <!--features_items-->
                     <h2 class="title text-center">Ürünler</h2>
                     @foreach (Product item in Model)
-                     {
+                    {
                         <div class="col-sm-4">
 
                             <div class="product-image-wrapper">
                                 <div class="single-products">
-                                    <div class="productinfo text-center">                                      
-                                        <img src="~/Content/images/@item.ProfileImage" alt="" width="550" height="250" />                                                                            
+                                    <div class="productinfo text-center">
+                                        <img src="~/Content/images/@item.ProfileImage" alt="" width="550" height="250" />
                                         <h2>@item.UnitPrice TL</h2>
                                         <p>@item.Name</p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Sepete Ekle</a>
                                     </div>
                                     <div class="product-overlay">
                                         <div class="overlay-content">
-                                           <h2>@item.UnitPrice TL</h2>
-                                           <p>@item.Name</p>
-                                                                                         
+                                            <h2>@item.UnitPrice TL</h2>
+                                            <p>@item.Name</p>
+
                                             <a href="/Cart/AddToCart/@item.ID" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Sepete Ekle</a>
-                                                                                                                                    
+
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +117,7 @@
                             </div>
 
                         </div>
-                     }
+                    }
 
                 </div>
 
@@ -125,7 +127,12 @@
 
         </div>
 
-
+        <nav aria-label="Page navigation example">
+            <ul class="pagination pull-right">
+                @Html.PagedListPager((IPagedList) Model, sayfa => Url.Action("Index", new { sayfa }))
+            </ul>
+        </nav>
+      
 
     </div>
     <div class="col-sm-3">

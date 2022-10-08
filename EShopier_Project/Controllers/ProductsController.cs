@@ -11,6 +11,8 @@ using EShopier.Entities;
 using Eshopier.DAL;
 using BusinessLogicLayer;
 using System.IO;
+using PagedList;
+using PagedList.Mvc;
 using static System.Net.WebRequestMethods;
 using System.Web.UI.WebControls;
 
@@ -22,7 +24,7 @@ namespace EShopier_Project.Controllers
         private Context db = new Context();
 
         // GET: Products
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(int sayfa=1)
         {
             var products = db.Products.Include(p => p.Brand).Include(p => p.Category);
             return View(await products.ToListAsync());
@@ -187,10 +189,10 @@ namespace EShopier_Project.Controllers
             }
             base.Dispose(disposing);
         }
-        public ActionResult ProdutDetails()
+        public ActionResult ProdutDetails(int sayfa=1)
         {
 
-            return View(pro.Productlist());
+            return View(pro.Productlist().ToPagedList(sayfa,5));
 
         }
         public ActionResult ByBrandForPDetails(int? id)

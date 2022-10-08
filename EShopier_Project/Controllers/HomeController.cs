@@ -9,6 +9,8 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
 
 namespace EShopier_Project.Controllers
 {
@@ -23,10 +25,10 @@ namespace EShopier_Project.Controllers
         BrandManager bm = new BrandManager();
         CartManager cartm = new CartManager();
        
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
-
-            return View(pro.Productlist());
+            var list = pro.Productlist().ToPagedList(sayfa, 9);           
+            return View(list); 
                      
         }
     

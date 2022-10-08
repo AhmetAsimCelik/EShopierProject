@@ -1,5 +1,7 @@
 ﻿@using EShopier.Entities
-@model List<Product>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Product>
 
 @{
     ViewBag.Title = "ProdutDetails";
@@ -19,7 +21,7 @@
                         <!--product-details-->
                         <div class="col-sm-5">
                             <div class="view-product">
-                                <img src="~/Content/images/@item.ProfileImage" alt="" />                                
+                                <img src="~/Content/images/@item.ProfileImage" alt="" />
                             </div>
 
                         </div>
@@ -30,20 +32,20 @@
                                 <h2>@item.Name</h2>
                                 <p>ID: @item.ID</p>
                                 <img src="~/Content/images/product-details/rating.png" alt="" />
-                               
-                                    
-                                    <span>
-                                        <span>@item.UnitPrice TL</span>
-                                        <label>Quantity:</label>
-                                        <input type="text" value="1" name="quantity" />
-                                        <button type="submit" class="btn btn-fefault cart">
-                                            <i class="fa fa-shopping-cart"></i>
-                                            Sepete Ekle
-                                        </button>
-                                        
 
-                                    </span>
-                                
+
+                                <span>
+                                    <span>@item.UnitPrice TL</span>
+                                    <label>Quantity:</label>
+                                    <input type="text" value="1" name="quantity" />
+                                    <button type="submit" class="btn btn-fefault cart">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        Sepete Ekle
+                                    </button>
+
+
+                                </span>
+
                                 <p><b>Stok:</b> @item.UnitStock</p>
                                 <p><b>KategoriID:</b> @item.CategoryID</p>
                                 <p><b>MarkaID:</b>@item.BrandID</p>
@@ -56,5 +58,11 @@
 
         </div>
     </div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pull-right">
+            @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("ProdutDetails", new { sayfa }))
+        </ul>
+    </nav>
+   
 </section>
 
