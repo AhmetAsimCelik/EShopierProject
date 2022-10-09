@@ -13,6 +13,12 @@ namespace EShopier.Entities
         public string Origin { get; set; }      
         public virtual List<Product> Products { get; set; }
         public DateTime AddDate { get; set; }
+        public string ProfileImage { get; set; }
+        public int FoundationYear { get; set; }
+        public string Description { get; set; }
+
+
+
         public Brand()
         {
             Products = new List<Product>();

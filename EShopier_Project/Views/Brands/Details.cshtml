@@ -27,6 +27,13 @@
         <dd>
             @Html.DisplayFor(model => model.Origin)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FoundationYear)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoundationYear)
+        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.AddDate)
@@ -35,7 +42,16 @@
         <dd>
             @Html.DisplayFor(model => model.AddDate)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfileImage)
 
+        </dt>
+
+        <dd>
+
+            <img src="~/Content/images/@Model.ProfileImage" width="50" height="50" />
+
+        </dd>
     </dl>
 </div>
 <p>

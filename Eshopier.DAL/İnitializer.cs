@@ -38,7 +38,7 @@ namespace Eshopier.DAL
             bilgisayar.Name = "Bilgisayar";
             bilgisayar.Description = "Açıklamasatırı";
             bilgisayar.AddDate = DateTime.Now;
-            context.Categories.Add(telefon);
+            context.Categories.Add(bilgisayar);
 
             Category televizyon = new Category();
             televizyon.Name = "Televizyon";
@@ -46,41 +46,97 @@ namespace Eshopier.DAL
             televizyon.AddDate = DateTime.Now;
             context.Categories.Add(televizyon);
 
+            
+
             Brand nike = new Brand();
             nike.Name = "Nike";
             nike.Origin = "USA";
-            nike.AddDate = DateTime.Now;            
+            nike.AddDate = DateTime.Now;
+            nike.FoundationYear = 1954;
+            nike.ProfileImage = "nike.jpg";
+            nike.FoundationYear = 1964;
+            nike.Description = "1964 de Amerika da kurulmuştur. Kuruluşundan bugüne dünyanın birçok ülkesine ihracat yapmaktadır.Sektör alanı giyim dir.";
             context.Brands.Add(nike);
 
             Brand samsung = new Brand();
             samsung.Name = "Samsung";
             samsung.Origin = "South Korea";
-            samsung.AddDate = DateTime.Now;            
+            samsung.AddDate = DateTime.Now;
+            samsung.FoundationYear = 1938;
+            samsung.ProfileImage = "samsung.png";
+            samsung.Description = "1938 de Güney Kore da kurulmuştur. Kuruluşundan bugüne dünyanın birçok ülkesine ihracat yapmaktadır.Sektör alanı teknoloji dir.";
+
             context.Brands.Add(samsung);
 
             Brand adidas = new Brand();
             adidas.Name = "Adidas";
             adidas.Origin = "Germany";
             adidas.AddDate = DateTime.Now;
+            adidas.ProfileImage = "adidas.jpg";
+            adidas.FoundationYear = 1949;
+            adidas.Description = "1949 de Almanya da kurulmuştur. Kuruluşundan bugüne dünyanın birçok ülkesine ihracat yapmaktadır.Sektör alanı giyim dir.";
+
             context.Brands.Add(adidas);
 
             Brand zara = new Brand();
             zara.Name = "Zara";
-            zara.Origin = "USA";
+            zara.Origin = "Spain";
             zara.AddDate = DateTime.Now;
+            zara.FoundationYear = 1975;
+            zara.ProfileImage = "zara.png";
+            zara.Description = "1975 de İspanya da kurulmuştur. Kuruluşundan bugüne dünyanın birçok ülkesine ihracat yapmaktadır.Sektör alanı giyim dir.";
+
             context.Brands.Add(zara);
 
             Brand puma = new Brand();
             puma.Name = "Puma";
-            puma.Origin = "Italy";
+            puma.Origin = "Germany";
             puma.AddDate = DateTime.Now;
+            puma.ProfileImage = "pumalogo.jpg";
+            puma.FoundationYear = 1948;
+            puma.Description = "1948 de Almanya da kurulmuştur. Kuruluşundan bugüne dünyanın birçok ülkesine ihracat yapmaktadır.Sektör alanı giyim dir.";
+
             context.Brands.Add(puma);
 
             Brand apple = new Brand();
             apple.Name = "Apple";
-            apple.Origin = "USa";
+            apple.Origin = "USA";
             apple.AddDate = DateTime.Now;
+            apple.ProfileImage = "apple.jpg";
+            apple.FoundationYear = 1976;
+            apple.Description = "1976 da Amerika da kurulmuştur. Kuruluşundan bugüne dünyanın birçok ülkesine ihracat yapmaktadır.Sektör alanı teknoloji dir.";
+
             context.Brands.Add(apple);
+
+            Brand huawei = new Brand();
+            huawei.Name = "Huawei";
+            huawei.Origin = "Chinese";
+            huawei.AddDate = DateTime.Now;
+            huawei.ProfileImage = "huawei.png";
+            huawei.FoundationYear = 1987;
+            huawei.Description = "1987 de Çin de kurulmuştur. Kuruluşundan bugüne dünyanın birçok ülkesine ihracat yapmaktadır.Sektör alanı teknoloji dir.";
+
+            context.Brands.Add(huawei);
+
+            Brand asus = new Brand();
+            asus.Name = "Asus";
+            asus.Origin = "Taipei";
+            asus.AddDate = DateTime.Now;
+            asus.ProfileImage = "asus.png";
+            asus.FoundationYear = 1989;
+            asus.Description = "1989 de Tayvan da kurulmuştur. Kuruluşundan bugüne dünyanın birçok ülkesine ihracat yapmaktadır.Sektör alanı teknoloji dir.";
+
+            context.Brands.Add(asus);
+
+            Brand mavi = new Brand();
+            mavi.Name = "Mavi";
+            mavi.Origin = "Turkey";
+            mavi.AddDate = DateTime.Now;
+            mavi.ProfileImage = "mavi.png";
+            mavi.FoundationYear = 1991;
+            mavi.Description = "1991 de Türkiye de kurulmuştur. Kuruluşundan bugüne dünyanın birçok ülkesine ihracat yapmaktadır.Sektör alanı giyim dir.";
+
+            context.Brands.Add(mavi);
 
             Product airforce = new Product();
             airforce.Name = "Airforce";
@@ -90,6 +146,7 @@ namespace Eshopier.DAL
             airforce.Brand = nike;
             airforce.Category = ayakkabı;
             airforce.AddDate = DateTime.Now;
+            
             context.Products.Add(airforce);
 
             Product noton = new Product();
@@ -152,6 +209,16 @@ namespace Eshopier.DAL
             zaramont.Brand = zara;
             context.Products.Add(zaramont);
 
+            Product adidasayakkabı = new Product();
+            adidasayakkabı.Name = "Adidas B74494";
+            adidasayakkabı.UnitPrice = 998;
+            adidasayakkabı.UnitStock = 10;
+            adidasayakkabı.ProfileImage = "adidasayakkabı.jpg";
+            adidasayakkabı.AddDate = DateTime.Now;
+            adidasayakkabı.Category = ayakkabı;
+            adidasayakkabı.Brand = adidas;
+            context.Products.Add(adidasayakkabı);
+
             Product iphone14 = new Product();
             iphone14.Name = "İphone 14 Pro Max";
             iphone14.UnitPrice = 41000;
@@ -172,7 +239,96 @@ namespace Eshopier.DAL
             pumaroma.Brand = puma;
             context.Products.Add(pumaroma);
 
-            
+            Product huaweilaptop = new Product();
+            huaweilaptop.Name = "Huawei Laptop";
+            huaweilaptop.UnitPrice = 12999;
+            huaweilaptop.UnitStock = 10;
+            huaweilaptop.ProfileImage = "huaweilaptop.jpg";
+            huaweilaptop.AddDate = DateTime.Now;
+            huaweilaptop.Category = bilgisayar;
+            huaweilaptop.Brand = huawei;
+            context.Products.Add(huaweilaptop);
+
+            Product mavisweat = new Product();
+            mavisweat.Name = "Turuncu Sweat";
+            mavisweat.UnitPrice = 299;
+            mavisweat.UnitStock = 10;
+            mavisweat.ProfileImage = "mavisweat2.jpg";
+            mavisweat.AddDate = DateTime.Now;
+            mavisweat.Category = giyim;
+            mavisweat.Brand = mavi;
+            context.Products.Add(mavisweat);
+
+            Product huaweitelefon = new Product();
+            huaweitelefon.Name = "P20 Lite 64GB";
+            huaweitelefon.UnitPrice = 8250;
+            huaweitelefon.UnitStock = 10;
+            huaweitelefon.ProfileImage = "huaweitelefon.jpg";
+            huaweitelefon.AddDate = DateTime.Now;
+            huaweitelefon.Category = telefon;
+            huaweitelefon.Brand = huawei;
+            context.Products.Add(huaweitelefon);
+
+            Product adidasesofman = new Product();
+            adidasesofman.Name = "Adidas Eşofman";
+            adidasesofman.UnitPrice = 349;
+            adidasesofman.UnitStock = 10;
+            adidasesofman.ProfileImage = "adidasesofman.jpg";
+            adidasesofman.AddDate = DateTime.Now;
+            adidasesofman.Category = giyim;
+            adidasesofman.Brand = adidas;
+            context.Products.Add(adidasesofman);
+
+            Product macbook = new Product();
+            macbook.Name = "MacBook Air";
+            macbook.UnitPrice = 24999;
+            macbook.UnitStock = 10;
+            macbook.ProfileImage = "macbookair.jpg";
+            macbook.AddDate = DateTime.Now;
+            macbook.Category = bilgisayar;
+            macbook.Brand = apple;
+            context.Products.Add(macbook);
+
+            Product zaraderi = new Product();
+            zaraderi.Name = "Zara Deri Ceket";
+            zaraderi.UnitPrice = 459;
+            zaraderi.UnitStock = 10;
+            zaraderi.ProfileImage = "zaraderi.jpg";
+            zaraderi.AddDate = DateTime.Now;
+            zaraderi.Category = giyim;
+            zaraderi.Brand = zara;
+            context.Products.Add(zaraderi);
+
+            Product asusmonitor = new Product();
+            asusmonitor.Name = "Asus Monitör 244Hz";
+            asusmonitor.UnitPrice = 9999;
+            asusmonitor.UnitStock = 10;
+            asusmonitor.ProfileImage = "asusmonitör.jpg";
+            asusmonitor.AddDate = DateTime.Now;
+            asusmonitor.Category = bilgisayar;
+            asusmonitor.Brand = asus;
+            context.Products.Add(asusmonitor);
+
+            Product asuslaptop = new Product();
+            asuslaptop.Name = "Asus Laptop 8GB 256SSD";
+            asuslaptop.UnitPrice = 32500;
+            asuslaptop.UnitStock = 10;
+            asuslaptop.ProfileImage = "asuslaptop.jpg";
+            asuslaptop.AddDate = DateTime.Now;
+            asuslaptop.Category = bilgisayar;
+            asuslaptop.Brand = asus;
+            context.Products.Add(asuslaptop);
+                    
+
+            Product mavisweat2 = new Product();
+            mavisweat2.Name = "Mavi Sweat";
+            mavisweat2.UnitPrice = 299;
+            mavisweat2.UnitStock = 10;
+            mavisweat2.ProfileImage = "mavisweat.jpg";
+            mavisweat2.AddDate = DateTime.Now;
+            mavisweat2.Category = giyim;
+            mavisweat2.Brand = mavi;
+            context.Products.Add(mavisweat2);
 
 
             User ahmet = new User();
@@ -184,6 +340,16 @@ namespace Eshopier.DAL
             ahmet.Password = "1";
             ahmet.IsAdmin = true;
             context.Users.Add(ahmet);
+
+            User hilal = new User();
+            hilal.Name = "Hilal Nur";
+            hilal.LastName = "Çelik";
+            hilal.UserName = "hilal";
+            hilal.Email = "hilalnur@icloud.com";
+            hilal.ProfileImage = "hilal.jpg";
+            hilal.Password = "1";
+            hilal.IsAdmin = false;
+            context.Users.Add(hilal);
 
             context.SaveChanges();
         }

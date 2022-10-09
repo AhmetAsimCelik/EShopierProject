@@ -1,0 +1,68 @@
+﻿@using EShopier.Entities
+@model List<Brand>
+@{
+    ViewBag.Title = "BrandDetails";
+}
+@*@foreach (Brand item in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+
+    }*@
+<div class="container">
+    <div class="row">
+
+
+
+
+        <div class="col-sm-14 ">
+            <div class="features_items">
+                <!--features_items-->
+                <h2 class="title text-center">Markalar</h2>
+
+                @foreach (Brand item in Model)
+                {
+                    <div class=" col-sm-3">
+                        <div class="card" style="width: 24rem;">
+                            <img class="card-img-top" src="~/Content/images/@item.ProfileImage" width="125" height="100" alt="Card image cap">
+                            <div class="card-body">
+                                <h3 class="card-title text-center">@item.Name</h3>
+                                <p class="card-text">@item.Description</p>
+                                <hr />
+
+                                <p class="card-text">Marka Menşei: @item.Origin</p>
+                                <p class="card-text">Marka Kuruluş Tarihi: @item.FoundationYear</p>
+                                <p class="card-text">Sitemize Giriş Tarihi: @item.AddDate</p>
+
+
+                                <hr />
+
+                                @*<a href="#" class="d-grid d-grid gap-2 btn btn-success ">Markayı İncele</a>*@
+                                <!-- Button trigger modal -->
+                                
+                            </div>
+                        </div>
+                    </div>
+
+
+                }
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+

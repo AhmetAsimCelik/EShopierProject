@@ -21,6 +21,18 @@ namespace BusinessLogicLayer
         {
             return brand.Find(c => c.ID == id);
         }
-       
+        public Brand FindBrand(Brand model)
+        {
+            var fınd = brand.Find(x => x.ID == model.ID);
+
+            if (model.ProfileImage == null)
+            {
+                model.ProfileImage = fınd.ProfileImage;
+
+            }
+
+            return fınd;
+        }
+
     }
 }

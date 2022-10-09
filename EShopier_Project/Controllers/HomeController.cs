@@ -45,7 +45,7 @@ namespace EShopier_Project.Controllers
                 return HttpNotFound();
             }
 
-            return View("Index", cat.Product);
+            return View("Index", cat.Product.ToPagedList(1,100));
         }
         public ActionResult ByBrand(int? id)
         {
@@ -60,7 +60,7 @@ namespace EShopier_Project.Controllers
                 return HttpNotFound();
             }
 
-            return View("Index", bra.Products);
+            return View("Index", bra.Products.ToPagedList(1,100));
         }
       
         public ActionResult Login()
@@ -146,11 +146,11 @@ namespace EShopier_Project.Controllers
 
         public ActionResult MostExpensive()
         {
-            return View("Index", pro.Productlist().OrderByDescending(x => x.UnitPrice).ToList());
+            return View("Index", pro.Productlist().OrderByDescending(x => x.UnitPrice).ToList().ToPagedList(1,9));
         }
         public ActionResult MostCheap()
         {
-            return View("Index", pro.Productlist().OrderBy(x => x.UnitPrice).ToList());
+            return View("Index", pro.Productlist().OrderBy(x => x.UnitPrice).ToList().ToPagedList(1,9));
         }
 
 
