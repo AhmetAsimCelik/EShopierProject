@@ -6,7 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <title>Home | E-Shopper</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/css/StyleSheet1.css" rel="stylesheet">
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/css/font-awesome.min.css" rel="stylesheet">
     <link href="~/Content/css/prettyPhoto.css" rel="stylesheet">
@@ -89,19 +96,20 @@
                                             </a>
                                             <ul class="dropdown-menu">
                                                 <li>
-                                                    <a href="/Categories/Index"><span class="fa fa-plus-circle"></span> Kategori Ekle</a>
+                                                    <a href="/Categories/Index"><span class="fa fa-plus-circle"></span> Kategorileri Düzenle</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/Brands/Index"><span class="fa fa-plus-circle"></span> Marka Ekle</a>
+                                                    <a href="/Brands/Index"><span class="fa fa-plus-circle"></span> Markaları Düzenle</a>
                                                 </li>
                                                 <li>
-                                                    <a href="/Products/Index"><span class="fa fa-plus-circle"></span> Ürün Ekle</a>
+                                                    <a href="/Products/Index"><span class="fa fa-plus-circle"></span> Ürünleri Düzenle</a>
                                                 </li>
 
                                             </ul>
                                         </li>
                                         @Html.Action("Summary", "Cart")
-                                        <li><a href="/Account/ShowAccount"><i class="fa fa-user"></i> @user.UserName</a></li>
+                                        @*<li><a href="/Account/ShowAccount"><i class="fa fa-user"></i> @user.UserName</a></li>*@
+                                        <li><a href="/Account/ShowAccount"><img src="~/Content/images/@user.ProfileImage" class="img-circle" alt="Cinque Terre" height="21" width="21"> @user.UserName</a></li>
 
 
                                         <li><a href="/Home/Logout"><i class="fa fa-sign-out"></i> Çıkış</a></li>
@@ -113,7 +121,8 @@
                                     {
                                         @Html.Action("Summary", "Cart")
                                         @*<li><a href="/Cart/Index"><i class="fa fa-shopping-cart"></i> Sepetim</a></li>*@
-                                        <li><a href="/Account/ShowAccount"><i class="fa fa-user"></i> @user.UserName</a></li>
+                                        @*<li><a href="/Account/ShowAccount"><i class="fa fa-user"></i> @user.UserName</a></li>*@
+                                        <li><a href="/Account/ShowAccount"><img src="~/Content/images/@user.ProfileImage" class="img-circle" alt="Cinque Terre" height="21" width="21"> @user.UserName</a></li>
 
                                         <li><a href="/Home/Logout"><i class="fa fa-sign-out"></i> Çıkış</a></li>
 

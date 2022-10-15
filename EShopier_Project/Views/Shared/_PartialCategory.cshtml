@@ -1,6 +1,6 @@
 ﻿@using EShopier.Entities
 @using BusinessLogicLayer
-@{ 
+@{
 
     BrandManager brandlist = new BrandManager();
     CatManager catlist = new CatManager();
@@ -8,26 +8,28 @@
     List<Category> liste = catlist.CategoryList();
     List<Brand> liste2 = brandlist.BrandList();
 
-} 
-
-
+}
 
 <div class="left-sidebar">
     <h2>Kategoriler</h2>
     <div class="panel-group category-products" id="accordian">
         <!--category-productsr-->
-        
+
 
         @foreach (Category item in liste)
         {
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title"><a href="/Home/ByCategory/@item.ID">@item.Name</a></h4>
+
+                    <h4 class="panel-title"><a href="/Home/ByCategory/@item.ID">@item.Name</a><span class="w3-badge w3-orange w3-small w3-right w3-margin-right">  @item.Product.Count</span></h4>
+                   
+
+
                 </div>
             </div>
         }
 
-       
+
     </div><!--/category-products-->
 
     <div class="brands_products">
@@ -36,15 +38,15 @@
         <div class="brands-name">
             @foreach (Brand item in liste2)
             {
-                <ul class="nav nav-pills nav-stacked">
+                <ul class="nav nav-pills nav-stacked ">
                     <li><a href="/Home/ByBrand/@item.ID"> <span class="pull-right"></span>@item.Name</a></li>
-                   
+
                 </ul>
             }
         </div>
     </div><!--/brands_products-->
 
-    
+
 
     <div class="shipping text-center">
         shipping

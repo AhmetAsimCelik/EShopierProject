@@ -1,0 +1,234 @@
+﻿body {
+
+}
+.alert {
+    padding: 20px;
+    background-color: orange; /* Red */
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    /* When moving the mouse over the close button */
+    .closebtn:hover {
+        color: black;
+    }
+.alert2 {
+    padding: 20px;
+    background-color: red; /* Red */
+    color: white;
+    margin-bottom: 15px;
+}
+ul.list-group {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.list-group li {
+        border: 1px solid #ddd;
+        margin-top: -1px; /* Prevent double borders */
+        background-color: #f6f6f6;
+        padding: 12px;
+    }
+
+     Style badges inside the list group 
+    ul.list-group .badge {
+        background-color: orange;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 50%;
+        padding: 5px 10px;
+        text-align: center;
+        margin-left: 5px;
+    }
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    
+}
+
+.label-warning[href],
+.badge-warning[href] {
+    background-color: #c67605;
+}
+
+#lblCartCount {
+    font-size: 10px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 3px;
+    vertical-align: top;
+    margin-left: -8px;
+}
+.button {
+    display: inline-block;
+    padding: 1px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: orange;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+    .button:hover {
+        background-color: #3e8e41
+    }
+
+    .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.button2 {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+    .button2:hover {
+        background-color: orange
+    }
+
+    .button2:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* From uiverse.io */
+button3 {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    background: #e62222;
+}
+
+    button3, button span {
+        transition: 200ms;
+    }
+
+        button3 .text {
+            transform: translateX(10px);
+            color: white;
+            font-weight: bold;
+        }
+
+        button3 .icon {
+            position: absolute;
+            border-left: 1px solid #c41b1b;
+            transform: translateX(110px);
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button3 svg {
+            width: 15px;
+            fill: #eee;
+        }
+
+        button3:hover {
+            background: #ff3636;
+        }
+
+            button3:hover .text {
+                color: transparent;
+            }
+
+            button3:hover .icon {
+                width: 150px;
+                border-left: none;
+                transform: translateX(0);
+            }
+
+        button3:focus {
+            outline: none;
+        }
+
+        button3:active .icon svg {
+            transform: scale(0.8);
+        }
+.button4 {
+    background-image: linear-gradient(45deg, #FF512F 0%, #F09819 51%, #FF512F 100%)
+}
+
+.button4 {
+    margin: 10px;
+    padding: 10px 17px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    border: 0px;
+    font-weight: 700;
+    box-shadow: 0px 0px 14px -7px #f09819;
+}
+
+    .button4:hover {
+        background-position: right center;
+        /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .button4:active {
+        transform: scale(0.95);
+    }
+
+

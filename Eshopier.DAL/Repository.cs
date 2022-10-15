@@ -39,11 +39,15 @@ namespace Eshopier.DAL
         {
             return setkısayol.FirstOrDefault(where);
         }
-
+        public IQueryable<T> ListQueryable()
+        {
+            return setkısayol.AsQueryable<T>();
+        }
         public int Update(T obj)
         {
             return Save();
         }
+       
     }
 
 }

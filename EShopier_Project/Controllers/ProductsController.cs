@@ -181,14 +181,14 @@ namespace EShopier_Project.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
         public ActionResult ProdutDetails(int sayfa=1)
         {
 
@@ -224,6 +224,20 @@ namespace EShopier_Project.Controllers
             }
 
             return View("ProdutDetails", cat.Product);
+        }
+        public ActionResult ShowProduct(int id )
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = pro.ListQueryable().FirstOrDefault();
+
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView("_PartialProduct", product);   
         }
     }
 }

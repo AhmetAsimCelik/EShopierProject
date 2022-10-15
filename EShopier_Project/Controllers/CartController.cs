@@ -101,7 +101,6 @@ namespace EShopier_Project.Controllers
         }
         public PartialViewResult Summary()
         {
-
             
             return PartialView(GetCart());
         }

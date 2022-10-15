@@ -11,6 +11,7 @@ using System.Web;
 using System.Web.Mvc;
 using PagedList;
 using PagedList.Mvc;
+using System.Windows.Forms;
 
 namespace EShopier_Project.Controllers
 {
@@ -25,11 +26,11 @@ namespace EShopier_Project.Controllers
         BrandManager bm = new BrandManager();
         CartManager cartm = new CartManager();
        
-        public ActionResult Index(int sayfa=1)
+        public ActionResult Index(int sayfa = 1)
         {
             var list = pro.Productlist().ToPagedList(sayfa, 9);           
             return View(list); 
-                     
+           
         }
     
         public ActionResult ByCategory(int? id )
@@ -121,10 +122,11 @@ namespace EShopier_Project.Controllers
                     res.Errors.ForEach(x => ModelState.AddModelError("", x.Message));
                     return View(model);
                 }
+               
                 return RedirectToAction("Login");
             }
 
-          
+           
             return View(model);
            
 

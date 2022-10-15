@@ -11,7 +11,7 @@ namespace BusinessLogicLayer
     public class ProManager
     {
         Repository<Product> product = new Repository<Product>();
-
+       
         public List<Product> Productlist()
         {
             return product.List();
@@ -32,6 +32,10 @@ namespace BusinessLogicLayer
             }
 
             return fınd;
+        }
+        public virtual IQueryable<Product> ListQueryable()
+        {
+            return product.ListQueryable();
         }
     }
 }

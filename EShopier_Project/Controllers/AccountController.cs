@@ -37,6 +37,7 @@ namespace EShopier_Project.Controllers
         [HttpPost]
         public ActionResult ShowAccount(User model ,HttpPostedFileBase ProfileImage)
         {
+            User currentUser = Session["login"] as User;
             if (ProfileImage != null)
             {
                 var dosyaadi = Path.GetFileName(ProfileImage.FileName);
@@ -48,11 +49,22 @@ namespace EShopier_Project.Controllers
             }
             else
             {
-                model.ProfileImage = "bos-profil.png";
+
+                um.FindUser(model);
             }
-            BusinessLayerResult<User> res = um.EditUser(model);
-            
-            Session["login"] = res.Result;
+            if (currentUser.IsAdmin == true)
+            {
+                BusinessLayerResult<User> res2 = um.EditAdmin(model);
+                Session["login"] = res2.Result;
+            }
+            else
+            {
+                BusinessLayerResult<User> res = um.EditUser(model);
+                Session["login"] = res.Result;
+            }
+           
+
+           
             return RedirectToAction("ShowAccount");
 
 

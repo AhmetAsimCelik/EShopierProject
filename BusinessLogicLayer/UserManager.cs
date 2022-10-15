@@ -159,16 +159,51 @@ namespace BusinessLogicLayer
             }
             return res;
         }
+        public BusinessLayerResult<User> EditAdmin(User model)
+        {
+            BusinessLayerResult<User> res = new BusinessLayerResult<User>();
+            if (model != null)
+            {
 
-        public User FindUser(User model)
+                res.Result = model;
+                res.Result = _user.Find(x => x.ID == model.ID);
+                res.Result.Name = model.Name;
+                res.Result.LastName = model.LastName;
+                res.Result.Email = model.Email;
+                res.Result.Password = model.Password;
+                res.Result.IsAdmin = true;
+                res.Result.UserName = model.UserName;
+                res.Result.ProfileImage = model.ProfileImage;
+
+                _user.Update(res.Result);
+
+
+
+            }
+            return res;
+        }
+
+        public User FindUserAdmin(User model)
         {
            var fınd= _user.Find(x => x.ID == model.ID);
 
            if (model.ProfileImage == null)
            {
                 model.ProfileImage = fınd.ProfileImage;
-
+               
            }
+
+            return fınd;
+        }
+        public User FindUser(User model)
+        {
+            var fınd = _user.Find(x => x.ID == model.ID);
+
+            if (model.ProfileImage == null)
+            {
+                model.ProfileImage = fınd.ProfileImage;
+                
+            }
 
             return fınd;
         }
