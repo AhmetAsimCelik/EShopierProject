@@ -13,9 +13,9 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal col-sm-offset-4">
-        
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
@@ -46,12 +46,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Kaydet" class="btn btn-success" />
-                <a href="/Categories/Index"><input type="button" value="Listeye Geri Dön" class="btn btn-warning" /></a>
+                <button class="button7" input type="submit">Kaydet</button>
+                <a href="/Categories/Index"><button class="button6" input type="submit">Listeye Geri Dön</button></a>
             </div>
         </div>
     </div>
-}
+} 
 
 <script src="~/Scripts/jquery-3.4.1.min.js"></script>
 <script src="~/Scripts/jquery.validate.min.js"></script>

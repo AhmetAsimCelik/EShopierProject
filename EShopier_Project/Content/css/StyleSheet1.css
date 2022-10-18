@@ -1,5 +1,4 @@
 ﻿body {
-
 }
 .alert {
     padding: 20px;
@@ -53,28 +52,7 @@ ul.list-group {
         text-align: center;
         margin-left: 5px;
     }
-.badge {
-    padding-left: 9px;
-    padding-right: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-    
-}
 
-.label-warning[href],
-.badge-warning[href] {
-    background-color: #c67605;
-}
-
-#lblCartCount {
-    font-size: 10px;
-    background: #ff0000;
-    color: #fff;
-    padding: 0 3px;
-    vertical-align: top;
-    margin-left: -8px;
-}
 .button {
     display: inline-block;
     padding: 1px 40px;
@@ -230,5 +208,4 @@ button3 {
     .button4:active {
         transform: scale(0.95);
     }
-
 

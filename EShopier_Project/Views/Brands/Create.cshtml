@@ -15,7 +15,7 @@
     @Html.AntiForgeryToken()
 
 <div class="form-horizontal col-sm-offset-4">
-    <h4>Marka</h4>
+    
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
@@ -66,8 +66,8 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Oluştur" class="btn btn-success" />
-            <a href="/Brands/Index"><input type="button" value="Listeye Geri Dön" class="btn btn-warning" /></a>
+            <button class="button7" input type="submit">Oluştur</button>
+            <a href="/Brands/Index"><button class="button6" input type="button">Listeye Geri Dön</button></a>
         </div>
     </div>
 </div>

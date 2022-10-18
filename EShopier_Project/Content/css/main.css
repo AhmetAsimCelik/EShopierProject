@@ -30,7 +30,7 @@ a:focus {
 a {
   -webkit-transition: 300ms;
   -moz-transition: 300ms;
-    -o-transition: 300ms;
+    -o-transition: 300ms;H
     transition: 300ms;
 }
 
@@ -2525,6 +2525,8 @@ h2.title {
 .contact-info .social-networks ul li a:hover{
   color: #FE980F;
 }
+
+
 
 
 

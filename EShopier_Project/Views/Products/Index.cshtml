@@ -8,85 +8,86 @@
     <h2>Ürünler Listesi</h2>
 
     <p>
-       
-        <a href="/Products/Create"><input type="submit" value="Ürün Oluştur" class="button4" /></a>
 
+        <a href="/Products/Create"><input type="submit" value="Ürün Oluştur" class="button4" /></a>
+       
     </p>
 </div>
 
 
-    <div class=" col-md col-md-10 col-sm-offset-1">
-        <table class="table">
+<div class=" col-md col-md-10 col-sm-offset-1">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitStock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AddDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfileImage)
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Brand.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Category.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.UnitPrice)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.UnitStock)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.AddDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ProfileImage)
-                </th>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitStock)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AddDate)
+                </td>
+                <td>
 
-                <th></th>
+                    <img src="~/Content/images/@item.ProfileImage" width="50" height="50" />
+
+
+                </td>
+
+                <td>
+                    <a href="/Products/Edit/@item.ID" class="btn btn-success btn-sm" title="Edit">
+                        <span class="fa fa-edit"></span>
+                    </a>
+                    <a href="/Products/DetailsForAdmin/@item.ID" class="btn btn-info btn-sm" title="Details">
+                        <span class="fa fa-search"></span>
+                    </a>
+                    <a href="/Products/Delete/@item.ID" class="btn btn-danger btn-sm" title="Delete">
+                        <span class="fa fa-trash-o"></span>
+                    </a>
+                </td>
             </tr>
+        }
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Brand.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Category.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.UnitPrice)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.UnitStock)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.AddDate)
-                    </td>
-                    <td>
-                        
-                            <img src="~/Content/images/@item.ProfileImage" width="50" height="50" />
-                        
-
-                    </td>
-
-                    <td>
-                        <a href="/Products/Edit/@item.ID" class="btn btn-success btn-sm" title="Edit">
-                            <span class="fa fa-edit"></span>
-                        </a>                        
-                        <a href="/Products/DetailsForAdmin/@item.ID" class="btn btn-info btn-sm" title="Details">
-                            <span class="fa fa-search"></span>
-                        </a>
-                        <a href="/Products/Delete/@item.ID" class="btn btn-danger btn-sm" title="Delete">
-                            <span class="fa fa-trash-o"></span>
-                        </a>
-                    </td>
-                </tr>
-            }
-
-        </table>
-    </div>
+    </table>
+    
+</div>
 
 
 

@@ -154,7 +154,7 @@ namespace EShopier_Project.Controllers
         {
             return View("Index", pro.Productlist().OrderBy(x => x.UnitPrice).ToList().ToPagedList(1,9));
         }
-
+       
 
 
 

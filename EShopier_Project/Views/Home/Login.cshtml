@@ -8,8 +8,8 @@
     <div class="container ">
         <div class="row">
             <div class="col-sm-4 col-sm-offset-4 ">
-                
-                
+
+
                 <div class="login-form">
 
                     <h2 class="text-center">GİRİŞ</h2>
@@ -18,18 +18,20 @@
                     @using (Html.BeginForm())
                     {
 
-                          @Html.ValidationSummary(false)
-                          @Html.TextBoxFor(model => model.UserName, new { @placeholder = "Kullanıcı Adınız" })
-                          @Html.TextBoxFor(model => model.Password, new { @placeholder = "Şifreniz", type = "password" })
-                          <div class=" b-center">
-                               <button type="submit" class="btn btn-default">Giriş </button>
-                          </div>
+                        @Html.ValidationSummary(false)
+                        @Html.TextBoxFor(model => model.UserName, new { @placeholder = "Kullanıcı Adınız"})
+                        @Html.TextBoxFor(model => model.Password, new { @placeholder = "Şifreniz", type = "password" })
+                        <div class=" b-center">
+                            <button type="submit" class="btn btn-default">Giriş </button>
+                        </div>
+
                     }
 
 
 
                 </div>
-                                   
+               
+
             </div>
 
         </div>
